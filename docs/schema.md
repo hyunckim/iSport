@@ -10,6 +10,13 @@ link        | string    | not null
 published   | datetime  | not null
 image       | string    |
 
+## collections
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+sports_id   | integer   | not null, foreign key
+user_id     | integer   | not null, foreign key
+
 ## favorites
 column name | data type | details
 ------------|-----------|-----------------------
@@ -24,8 +31,21 @@ id          | integer   | not null, primary key
 url         | string    | not null
 title       | string    | not null
 description | string    | not null
-sport_id    | integer   | not null, foreign key
 image       | string    |
+
+## feed_sports
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+feed_id     | integer   | not null, foreign key
+sport_id    | integer   | not null, foreign key
+
+## subscription(following feeds)
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+feed_id     | integer   | not null, foreign key
+collect_id  | integer   | not null, foreign key
 
 ## sports
 column name | data type | details
