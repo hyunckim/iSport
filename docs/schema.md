@@ -1,21 +1,5 @@
 # Schema Information
 
-## feeds
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-url         | string    | not null
-title       | string    | not null
-description | string    | not null
-sport_id    | integer   | not null, foreign key
-image       | string    |
-
-## sports
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-
 ## articles
 column name | data type | details
 ------------|-----------|-----------------------
@@ -32,6 +16,22 @@ column name | data type | details
 id          | integer   | not null, primary key
 article_id  | integer   | not null, foreign key
 user_id     | integer   | not null, foreign key
+
+## feeds
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+url         | string    | not null
+title       | string    | not null
+description | string    | not null
+sport_id    | integer   | not null, foreign key
+image       | string    |
+
+## sports
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
 
 ## users
 column name     | data type | details
