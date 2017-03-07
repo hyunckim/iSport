@@ -17,13 +17,6 @@ id          | integer   | not null, primary key
 sports_id   | integer   | not null, foreign key
 user_id     | integer   | not null, foreign key
 
-## favorites
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-article_id  | integer   | not null, foreign key
-user_id     | integer   | not null, foreign key
-
 ## feeds
 column name | data type | details
 ------------|-----------|-----------------------
