@@ -11,29 +11,23 @@
 ### Users
 
 - `POST /api/users`
-  - #new
-- `PATCH /api/users`
-  - #create SignUp
+  - #create Sign Up
+
 ### Session
 
-- `GET /api/session`
-  - #new
 - `POST /api/session`
   - #create SignIn
 - `DELETE /api/session`
   - #destroy LogOut
 
-### Articles
-
-- `GET /api/articles/:id`
-  - #show
-
 ### Feeds
 
 - `GET /api/feeds/:id`
   - #show
-- `GET /api/feeds/:id/articles`
-  - index of all articles for a feed
+- `GET /api/feeds`
+  - #index
+- `POST /api/feeds`
+  - #create
 
 ### Sports
 
@@ -50,6 +44,8 @@
   - #index
 - `GET /api/collections/:id`
   - #show
+- `GET /api/collections/:id/edit`
+  - #edit
 - `POST /api/collections`
   - #create
 - `PATCH /api/collections/:id`
@@ -59,10 +55,6 @@
 
 ### Subscriptions
 
-- `GET /api/subscriptions`
-  - #index
-- `GET /api/subscriptions/:id`
-  - #show
 - `POST /api/subscriptions`
   - #create
 - `DELETE /api/subscriptions/:id`
