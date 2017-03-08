@@ -4,7 +4,7 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null, foreign key
+title       | string    | not null, foreign key
 user_id     | integer   | not null, foreign key
 
 ## feeds
