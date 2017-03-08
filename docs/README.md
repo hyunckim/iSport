@@ -8,11 +8,12 @@ iSport is a RSS web application inspired by Feedly.
 - [ ] New account creation, login, and guest/demo login
 - [ ] Feeds
   - [ ] Users can view articles
-  - [ ] Users can follow feeds
+  - [ ] Users can create new feeds
 - [ ] Sports
-  - [ ] Feeds are grouped by sports
+  - [ ] Feeds are tagged by sports
 - [ ] Collections
-  - [ ] Feeds can be subscribed to and added to a collection
+  - [ ] Users can create a new collection
+  - [ ] Users can subscribe/follow feeds and add to collections
   - [ ] Can view a collection which shows all subscribed feeds of collection
 - [ ] Production README
 - [ ] Bonus
