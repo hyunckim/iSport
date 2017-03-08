@@ -1,20 +1,10 @@
 # Schema Information
 
-## articles
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-feed_id     | integer   | not null, foreign key
-title       | string    | not null
-link        | string    | not null
-published   | datetime  | not null
-image       | string    |
-
 ## collections
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-sports_id   | integer   | not null, foreign key
+name        | string    | not null, foreign key
 user_id     | integer   | not null, foreign key
 
 ## feeds
@@ -50,7 +40,6 @@ name        | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-user_name       | integer   | not null, unique
-email           | string    | not null, unique
+username        | integer   | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
