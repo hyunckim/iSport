@@ -24,7 +24,7 @@ iSport is a RSS web application inspired by Feedly, built using Ruby on Rials an
   - [ ] Shows number of unread articles in the feed
   - [ ] Users can save their favorite articles
 
-  ## Design Docs
+## Design Docs
   * [View Wireframes][wireframes]
   * [React Components][components]
   * [API endpoints][api-endpoints]
@@ -37,7 +37,7 @@ iSport is a RSS web application inspired by Feedly, built using Ruby on Rials an
   [api-endpoints]: docs/api-endpoints.md
   [schema]: docs/schema.md
 
-  ## Implementation Timeline
+## Implementation Timeline
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
 
