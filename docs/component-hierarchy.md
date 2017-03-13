@@ -15,6 +15,9 @@
   * SportsContainer
     * SportsIndex
       * SportsIndexItem
+  * SubscriptionContainer
+    * SubscriptionIndex
+      * SubscriptionIndexItem
 - *ArticlePage*
   * FeedDetail
   * ArticleDetail
