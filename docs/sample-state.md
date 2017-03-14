@@ -2,7 +2,7 @@
 {
   currentUser: {
     id: 1,
-    username: "Hyun Chul Kim",
+    email: "Hyun Chul Kim",
     collections: {
       2: {
         id: 2,
@@ -43,7 +43,7 @@
       followers: {
         1: {
           id: 1,
-          username: "Hyun Chul Kim"
+          email: "Hyun Chul Kim"
         }
       },
       sports: {

@@ -40,6 +40,6 @@ name        | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-username        | integer   | not null, unique
+email        | integer   | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
