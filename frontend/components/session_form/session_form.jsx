@@ -8,6 +8,12 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps() {
+    this.setState({ email: "", password: ""});
+
+  }
+
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -55,7 +61,7 @@ class SessionForm extends React.Component {
 
           <label className="password-text">Password</label>
           <input type="password" className="session-input-box" onChange={ this.update('password') }
-            placeholder="Enter password"></input>
+            placeholder="Enter password" value={ this.state.password }></input>
 
           <input type="submit" className="session-submit-button" onClick={ this.handleSubmit } value = { submitContent }></input>
         </form>
