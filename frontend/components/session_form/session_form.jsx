@@ -5,13 +5,33 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { email: "", password: "" };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+  }
+
+  update(attr) {
     return e => {
-      e.preventDefault();
-      this.props.processForm(this.state);
+      this.setState({ [attr]: e.target.value });
     };
+  }
+
+  renderErrors() {
+    let { errors } = this.props;
+    let allErrors = [];
+    if (errors.length) {
+      return (
+        errors.map((error, index) => (
+          <li key="index">
+            { error }
+          </li>
+        ))
+      );
+    }
   }
 
   render() {
@@ -27,9 +47,9 @@ class SessionForm extends React.Component {
       <div>
         <form>
           <h3>iSport</h3>
-
-          <input type="text" placeholder="demo@appacademy.io" value={ this.state.email }></input>
-          <input type="password"></input>
+          { this.renderErrors() }
+          <input type="text" onChange={ this.update('email') } placeholder="demo@appacademy.io" value={ this.state.email }></input>
+          <input type="password" onChange={ this.update('password') }></input>
           <input type="submit" onClick={ this.handleSubmit } value = { submitContent }></input>
         </form>
       </div>
