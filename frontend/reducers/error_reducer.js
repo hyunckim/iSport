@@ -1,4 +1,4 @@
-import { RECEIVE_SIGNUP_ERRORS, RECEIVE_LOGIN_ERRORS } from '../actions/error_actions';
+import { RECEIVE_SIGNUP_ERRORS, RECEIVE_LOGIN_ERRORS, CLEAR_ERRORS } from '../actions/error_actions';
 import { merge } from 'lodash';
 
 const _defaultState =  {
@@ -18,6 +18,10 @@ const ErrorReducer = (state = _defaultState, action) => {
       let newState2 = merge({}, state);
       newState2.login.push(action.login);
       return newState2;
+
+    case CLEAR_ERRORS:
+      return _defaultState;
+      
     default:
       return state;
   }

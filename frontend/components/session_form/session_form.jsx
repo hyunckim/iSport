@@ -38,13 +38,13 @@ class SessionForm extends React.Component {
     }
   }
 
-  // demologin() {
-  //   if (!this.state.loggedIn) {
-  //     return (
-  //       <button className="session-submit-button" onClick={ this.props. }>Demo</button>
-  //     );
-  //   }
-  // }
+  demologin() {
+    if (!this.state.loggedIn) {
+      return (
+        <button className="session-submit-button demo" onClick={() => this.props.login({email: "test", "password": "123456"}) }>Demo</button>
+      );
+    }
+  }
 
   render() {
     let submitContent;
@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
           <label className="password-text">Password</label>
           <input type="password" className="session-input-box" onChange={ this.update('password') }
             placeholder="Enter password" value={ this.state.password }></input>
-
+          { this.demologin() }
           <input type="submit" className="session-submit-button" onClick={ this.handleSubmit } value = { submitContent }></input>
         </form>
       </div>
