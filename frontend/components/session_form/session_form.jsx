@@ -45,12 +45,19 @@ class SessionForm extends React.Component {
 
     return (
       <div>
-        <form>
-          <h3>iSport</h3>
-          { this.renderErrors() }
-          <input type="text" onChange={ this.update('email') } placeholder="demo@appacademy.io" value={ this.state.email }></input>
-          <input type="password" onChange={ this.update('password') }></input>
-          <input type="submit" onClick={ this.handleSubmit } value = { submitContent }></input>
+        <form className="session-form">
+          <ul className="error">
+            { this.renderErrors() }
+          </ul>
+          <label className="email-text">Email</label>
+          <input type="text" className="session-input-box" onChange={ this.update('email') }
+            placeholder="Enter email" value={ this.state.email } ></input>
+
+          <label className="password-text">Password</label>
+          <input type="password" className="session-input-box" onChange={ this.update('password') }
+            placeholder="Enter password"></input>
+
+          <input type="submit" className="session-submit-button" onClick={ this.handleSubmit } value = { submitContent }></input>
         </form>
       </div>
     );

@@ -18,7 +18,7 @@ class Navbar extends React.Component {
    const welcomeMessage = this.props.currentUser ? `Welcome ${this.props.currentUser.email}` : "";
 
    return (
-     <div>
+     <div className="navbar">
        { welcomeMessage }
        { this.logoutButton() }
      </div>
