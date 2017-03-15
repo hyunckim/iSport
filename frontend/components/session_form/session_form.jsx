@@ -38,6 +38,14 @@ class SessionForm extends React.Component {
     }
   }
 
+  // demologin() {
+  //   if (!this.state.loggedIn) {
+  //     return (
+  //       <button className="session-submit-button" onClick={ this.props. }>Demo</button>
+  //     );
+  //   }
+  // }
+
   render() {
     let submitContent;
 

@@ -8,7 +8,7 @@ import SplashContainer from './splash/splash_container';
 const Root = ({ store }) => {
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
+    const currentUser = store.getState().currentUser;
     if (currentUser) {
       replace('/');
     }
