@@ -10,7 +10,6 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps() {
     this.setState({ email: "", password: ""});
-
   }
 
 
@@ -28,7 +27,6 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     let { errors } = this.props;
-    let allErrors = [];
     if (errors.length) {
       return (
         errors.map((error, index) => (
