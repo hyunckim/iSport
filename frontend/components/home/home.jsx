@@ -1,15 +1,16 @@
 import React from 'react';
-import SidebarContainer from '../sidebar/sidebar_container';
+import FeedIndexContainer from '../feed/feed_index_container';
 
 class Home extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
       <div className="home-container">
-        <SidebarContainer />
+        <FeedIndexContainer />
+        { this.props.children }
       </div>
     );
   }

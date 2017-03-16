@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
+      .then(() => this.props.clearErrors())
       .then(() => this.props.router.replace('home'));
   }
 
@@ -40,8 +41,8 @@ class SessionForm extends React.Component {
     if (errors.length) {
       return (
         errors.map((error, index) => (
-          <li key="index">
-            { error }
+          <li key={index}>
+            <p>{ error }</p><br />
           </li>
         ))
       );
@@ -90,6 +91,7 @@ class SessionForm extends React.Component {
           <ul className="error">
             { this.renderErrors() }
           </ul>
+
           <label className="email-text">Email</label>
           <input type="text" className="session-input-box" onChange={ this.update('email') }
             placeholder="Enter email" value={ this.state.email } ></input>

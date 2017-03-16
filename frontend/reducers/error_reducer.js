@@ -10,13 +10,13 @@ const ErrorReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_SIGNUP_ERRORS:
-    let newState = merge({}, state);
-    newState.signup.push(action.signup);
-    return newState;
+      let newState = merge({}, state);
+      newState.signup = action.signup;
+      return newState;
 
     case RECEIVE_LOGIN_ERRORS:
       let newState2 = merge({}, state);
-      newState2.login.push(action.login);
+      newState2.login = action.login;
       return newState2;
 
     case CLEAR_ERRORS:
