@@ -6,17 +6,8 @@
     collections: {
       2: {
         id: 2,
-        title: "Baseball"
-        feeds: {
-          2: {
-            id: 2,
-            url: "mlb.com",
-            title: "Major League Baseball",
-            description: "The Official Site of Major League Baseball.",
-            image: ""
-          },
-          ...
-        }
+        title: "Baseball",
+        feed_id: [],
       },
       ...
     }
