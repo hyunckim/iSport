@@ -5,7 +5,7 @@ import SessionFormContainer from '../session_form/session_form_container';
 
 const customStyles = {
   content : {
-    top                   : '40%',
+    top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
@@ -46,8 +46,8 @@ class ModalSession extends React.Component {
 
     render() {
 
-      const buttonName = (this.props.formType === 'signin' ? "GET STARTED" : "EXISTING USER");
-      const className = (this.props.formType === 'signin' ? "signin-button" : "login-button");
+      const buttonName = (this.props.formType === 'signup' ? "GET STARTED" : "EXISTING USER");
+      const className = (this.props.formType === 'signup' ? "signup-button" : "login-button");
       return (
         <div className="session-buttons">
           <button onClick={this.openModal} className={ className }>{ buttonName }</button>
@@ -58,7 +58,9 @@ class ModalSession extends React.Component {
             style={customStyles}
             contentLabel="Example Modal"
           >
-            <h3 className="session-logo">iSport</h3>
+          <div className="session-logo">
+            <span className="session-logo1">i</span><span className="session-logo2">S</span><span className="session-logo3">PORT</span>
+          </div>
             <SessionFormContainer formType={ this.props.formType } closeModal={ this.closeModal }/>
           </Modal>
         </div>

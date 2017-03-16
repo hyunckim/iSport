@@ -4,13 +4,13 @@ import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.currentUser),
-  errors: (ownProps.fromType === 'signin' ? state.errors.signin : state.errors.login),
+  errors: (ownProps.formType === 'signup' ? state.errors.signup : state.errors.login),
   formType: ownProps.formType
 });
 
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.formType === "signin" ? signup : login;
+  const action = ownProps.formType === "signup" ? signup : login;
 
   return {
     processForm: user => dispatch(action(user)),

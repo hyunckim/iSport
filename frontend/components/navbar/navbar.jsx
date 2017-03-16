@@ -20,7 +20,9 @@ class Navbar extends React.Component {
    return (
      <div className="navbar">
        <div className="center-container">
-         <p>iSport</p>
+         <div className="nav-logo">
+           <span className="nav-logo1">i</span><span className="nav-logo2">S</span><span className="nav-logo3">PORT</span>
+         </div>
          { this.logoutButton() }
          <div className="search-bar">
            <i className="fa fa-search" aria-hidden="true"></i>

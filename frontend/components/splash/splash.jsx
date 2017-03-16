@@ -15,7 +15,7 @@ class Splash extends React.Component {
        <div className="welcome-content">
          <h1 className="welcome-message">Welcome to iSport</h1>
          <p className="welcome-description">Extraordinary world of sports</p>
-         <ModalSession formType={"signin"} />
+         <ModalSession formType={"signup"} />
          <ModalSession formType={"login"} />
        </div>
       </div>
