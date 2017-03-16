@@ -1,15 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class Navbar extends React.Component {
 
  constructor(props) {
    super(props);
+   this.handleLogOut = this.handleLogOut.bind(this);
+ }
+
+ handleLogOut(e) {
+   e.preventDefault();
+   this.props.logout()
+    .then(() => this.props.router.replace('/'));
  }
 
  logoutButton() {
    if ( this.props.currentUser ) {
-     return <button onClick={this.props.logout}>Log Out</button>;
+     return <button onClick={ this.handleLogOut }>Log Out</button>;
    }
  }
 
@@ -34,4 +41,4 @@ class Navbar extends React.Component {
  }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

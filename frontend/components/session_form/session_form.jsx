@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { email: "", password: "" };
+    this.state = { email: "", password: "", submitContent: "", message: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
@@ -13,11 +13,20 @@ class SessionForm extends React.Component {
     this.setState({ email: "", password: ""});
   }
 
+  componentDidMount() {
+    if (this.props.formType === 'login') {
+      this.setState({ submitContent: "Log In", message: "Sign In"});
+    } else {
+      this.setState({ submitContent: "Sign Up", message: "Create Account"});
+    }
+  }
+
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user)
+      .then(() => this.props.router.replace('home'));
   }
 
   update(attr) {
@@ -43,7 +52,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     let demoLogin = "demo@iSport.com".split('');
     let demoPassword = "password123".split('');
-    this.setState({email: "", password: ""});
+    this.setState({email: "", password: "", submitContent: "Log In", message: "Sign In"});
     let that = this;
     let interval = setInterval(() => {
       if (demoLogin.length) {
@@ -52,7 +61,8 @@ class SessionForm extends React.Component {
         this.setState({ password: this.state.password+demoPassword.shift()});
       } else {
         clearInterval(interval);
-        this.props.login(this.state);
+        this.props.login(this.state)
+        .then(() => this.props.router.replace('home'));
       }
     }, 80);
   }
@@ -71,20 +81,11 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let submitContent;
-
-    if (this.props.formType === 'login') {
-      submitContent = "Log In";
-    } else {
-      submitContent = "Sign Up";
-    }
-
-    const message = this.props.formType === 'login' ? "Sign In" : "Create Account";
     return (
       <div>
         <form className="session-form">
 
-          <p className={`sign-message`}>{ message }</p>
+          <p className={`sign-message`}>{ this.state.message }</p>
 
           <ul className="error">
             { this.renderErrors() }
@@ -100,12 +101,12 @@ class SessionForm extends React.Component {
           <div className="demo">
             <p>Log in as a <a className="demo-login" onClick={ this.demoLogin }>guest</a></p>
           </div>
-          
-          <input type="submit" className="session-submit-button" onClick={ this.handleSubmit } value = { submitContent }></input>
+
+          <input type="submit" className="session-submit-button" onClick={ this.handleSubmit } value = { this.state.submitContent }></input>
         </form>
       </div>
     );
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
