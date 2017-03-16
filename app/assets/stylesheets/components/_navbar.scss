@@ -1,3 +1,21 @@
+.nav-logo1 {
+  font-family: Raiderfont;
+  font-size: 14px;
+}
+
+.nav-logo2 {
+  font-family: Raiderfont;
+  color: red;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.nav-logo3 {
+  font-family: Raiderfont;
+  font-size: 18px;
+  font-style: italic;
+}
+
 .navbar {
   position: static;
   height: 60px;
@@ -21,21 +39,21 @@
 
 .search-input {
   box-sizing: border-box;
+  width: 197px;
   border: 1px solid $light-gray;
   border-radius: 4px;
   padding: 10px 10px 10px 25px;
-  transition: width 2s;
+  -webkit-transition: width 2s;
+  transition-duration: 0.7s;
 }
 
 .search-input:active {
-  transition: width 2s;
 }
 
 .search-input:focus {
   width: 400px;
   box-shadow: 0 0 5px $blue;
   border: 1px solid $blue;
-  transition: width 2s;
 }
 
 .fa-search {

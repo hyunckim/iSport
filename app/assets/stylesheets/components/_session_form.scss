@@ -1,12 +1,12 @@
 .ReactModal__Content {
-  height: 600px;
+  height: 400px;
   width: 400px;
   border: 3px solid #f1f1f1;
 }
 
 .session-form {
   font-family: sans-serif;
-  padding-top: 80px;
+  padding-top: 65px;
 }
 
 .sign-message {
@@ -43,6 +43,24 @@
   float: left;
 }
 
+.session-logo1 {
+  font-family: Raiderfont;
+  font-size: 14px;
+}
+
+.session-logo2 {
+  font-family: Raiderfont;
+  color: red;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.session-logo3 {
+  font-family: Raiderfont;
+  font-size: 18px;
+  font-style: italic;
+}
+
 .session-close {
   display: inline-block;
   background-color: red;
@@ -71,7 +89,13 @@
 }
 
 .demo {
+  font-size: 14px;
+  font-family: sans-serif;
+}
 
+.demo-login {
+  cursor: pointer;
+  color: $light-blue;
 }
 
 .error {

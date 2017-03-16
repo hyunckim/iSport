@@ -1,13 +1,12 @@
+
+
 .welcome {
   display: block;
   height: 700px;
   width: 100%;
   font-family: sans-serif;
   padding-top: 80px;
-}
-
-.welcome-container {
-  background: url("splash-image.jpg");
+  background-image: url("football-image.jpg");
 }
 
 .welcome-content {
@@ -42,7 +41,7 @@
   letter-spacing: 25px;
 }
 
-.signin-button {
+.signup-button {
   padding: 13px 50px;
   margin-right: 10px;
   border-radius: 10px;
@@ -60,7 +59,7 @@
   box-shadow: 0 1px #999;
 }
 
-.signin-button:hover {
+.signup-button:hover {
   background-color: #2248C3;
 }
 
@@ -68,7 +67,7 @@
   background-color: #E3E7F3;
 }
 
-.signin-button:active {
+.signup-button:active {
   background-color: #325FF4;
   box-shadow: 0 1px #666;
   transform: translateY(4px);
