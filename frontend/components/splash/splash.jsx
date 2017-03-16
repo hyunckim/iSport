@@ -11,11 +11,14 @@ class Splash extends React.Component {
  render() {
    return (
      <header className="welcome">
+       <div className="welcome-container">
        <div className="welcome-content">
          <h1 className="welcome-message">Welcome to iSport</h1>
+         <p className="welcome-description">Extraordinary world of sports</p>
          <ModalSession formType={"signin"} />
          <ModalSession formType={"login"} />
        </div>
+      </div>
      </header>
    );
  }

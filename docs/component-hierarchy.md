@@ -34,7 +34,7 @@
 | "/" | "App" |
 | "/collection/" | "CollectionIndex" |
 | "/collection/:collectionId" | "CollectionIndexItem" |
-| "/collection/:collectionId/feed/:feedId" | "SubscriptionFeedItem" |
+| "/collection/:collesctionId/feed/:feedId" | "SubscriptionFeedItem" |
 | "/sports" | "SportsIndex" |
 | "/sports/:sportsId" | "SportsIndexItem" |
 | "/feed" | "FeedIndex" |

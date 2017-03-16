@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
   demologin() {
     if (!this.state.loggedIn) {
       return (
-        <button className="session-submit-button demo" onClick={() => this.props.login({email: "test", "password": "123456"}) }>Demo</button>
+        <button className="session-submit-button demo" onClick={() => this.props.login({email: "test", password: "123456"}) }>Demo</button>
       );
     }
   }
@@ -55,9 +55,13 @@ class SessionForm extends React.Component {
       submitContent = "Sign Up";
     }
 
+    const message = this.props.formType === 'login' ? "Welcome Back" : "Create an Account";
     return (
       <div>
         <form className="session-form">
+
+          <p className={`sign-message`}>{ message }</p>
+
           <ul className="error">
             { this.renderErrors() }
           </ul>
@@ -68,7 +72,9 @@ class SessionForm extends React.Component {
           <label className="password-text">Password</label>
           <input type="password" className="session-input-box" onChange={ this.update('password') }
             placeholder="Enter password" value={ this.state.password }></input>
+
           { this.demologin() }
+
           <input type="submit" className="session-submit-button" onClick={ this.handleSubmit } value = { submitContent }></input>
         </form>
       </div>

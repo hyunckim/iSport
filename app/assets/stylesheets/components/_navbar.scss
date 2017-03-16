@@ -3,3 +3,44 @@
   height: 60px;
   border-bottom: 1px solid #e2e2e2;
 }
+
+.center-container {
+  width: 800px;
+  height: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  position: relative;
+  transition: width 2s;
+}
+
+.search-input {
+  box-sizing: border-box;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  padding: 10px 10px 10px 25px;
+  transition: width 2s;
+}
+
+.search-input:active {
+  transition: width 2s;
+}
+
+.search-input:focus {
+  width: 400px;
+  box-shadow: 0 0 5px $blue;
+  border: 1px solid $blue;
+  transition: width 2s;
+}
+
+.fa-search {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: $light-gray;
+}

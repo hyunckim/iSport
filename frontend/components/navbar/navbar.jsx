@@ -19,8 +19,14 @@ class Navbar extends React.Component {
 
    return (
      <div className="navbar">
-       { welcomeMessage }
-       { this.logoutButton() }
+       <div className="center-container">
+         <p>iSport</p>
+         { this.logoutButton() }
+         <div className="search-bar">
+           <i className="fa fa-search" aria-hidden="true"></i>
+           <input className="search-input" placeholder="Search"></input>
+          </div>
+        </div>
      </div>
    );
  }
