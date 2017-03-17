@@ -11,3 +11,11 @@ export const fetchFeeds = () => (
     url: `/api/feeds`
   })
 );
+
+export const createFeed = (feed) => (
+  $.ajax({
+    method: "POST",
+    url: `/api/feeds`,
+    date: { feed }
+  })
+);
