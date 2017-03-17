@@ -2,18 +2,17 @@
 
 .welcome {
   display: block;
-  height: 100vh;
-  width: 100%;
+  height: auto;
+  width: 100vw;
   font-family: sans-serif;
-  padding-top: 80px;
 }
 
 .welcome-container {
   background-image: url("http://res.cloudinary.com/dh7hv7kkd/image/upload/v1489679437/football-image_u6dg4o.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .welcome-content {
@@ -22,6 +21,7 @@
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 80px;
 }
 
 .welcome-message {

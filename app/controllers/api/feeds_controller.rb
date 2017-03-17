@@ -23,6 +23,6 @@ class Api::FeedsController < ApplicationController
   private
 
   def feed_params
-    params.require(:feed).permit(:url, :title, :description)
+    params.require(:feed).permit(:url, :title, :description, :image)
   end
 end

@@ -16,6 +16,6 @@ export const createFeed = (feed) => (
   $.ajax({
     method: "POST",
     url: `/api/feeds`,
-    date: { feed }
+    data: { feed }
   })
 );

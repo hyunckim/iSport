@@ -18,8 +18,14 @@ export const fetchFeeds = () => dispatch => (
 
 export const fetchNewFeed = (feed) => dispatch => (
   FeedAPIUtil.createFeed(feed)
-    .then(feed => dispatch(receiveNewFeed(feed)))
-    .fail(error => dispatch(receiveFeedErrors(error.responseJSON)))
+    .then(feed => {
+      debugger;
+      return dispatch(receiveNewFeed(feed));
+    })
+    .fail(error => {
+      debugger;
+      return dispatch(receiveFeedErrors(error.responseJSON));
+    })
 );
 
 const receiveFeed = feed => ({
