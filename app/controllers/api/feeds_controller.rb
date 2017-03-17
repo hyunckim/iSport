@@ -11,6 +11,13 @@ class Api::FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(feed_params)
+
+    if @feed.save
+      render "api/feeds/show"
+
+    else
+      render json: @feed.errors.full_messages, status: 422
+    end
   end
 
   private
