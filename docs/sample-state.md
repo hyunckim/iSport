@@ -15,8 +15,8 @@
   errors: {
     signUp: [],
     logIn: [],
-    createCollection: ["name can't be blank"],
-    createFeed: ["url can't be blank"]
+    collection: ["name can't be blank"],
+    feed: ["url can't be blank"]
   },
   collections: {
     1: {
