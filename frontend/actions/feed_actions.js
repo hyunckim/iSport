@@ -2,7 +2,7 @@ export const RECEIVE_FEED = "RECEIVE_FEED";
 export const RECEIVE_FEEDS = "RECEIVE_FEEDS";
 export const RECEIVE_NEW_FEED = "RECEIVE_NEW_FEED";
 import * as FeedAPIUtil from '../util/feed_api_util';
-import { receiveFeedErrors } from './erors_actions';
+import { receiveFeedErrors } from './error_actions';
 
 export const fetchFeed = (feed) => dispatch => (
   FeedAPIUtil.fetchFeed(feed)
