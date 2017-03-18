@@ -4,8 +4,8 @@ export const RECEIVE_NEW_FEED = "RECEIVE_NEW_FEED";
 import * as FeedAPIUtil from '../util/feed_api_util';
 import { receiveFeedErrors } from './error_actions';
 
-export const fetchFeed = (feed) => dispatch => (
-  FeedAPIUtil.fetchFeed(feed)
+export const fetchFeed = (feedId) => dispatch => (
+  FeedAPIUtil.fetchFeed(feedId)
     .then(feed => dispatch(receiveFeed(feed)))
 );
 
@@ -19,11 +19,9 @@ export const fetchFeeds = () => dispatch => (
 export const fetchNewFeed = (feed) => dispatch => (
   FeedAPIUtil.createFeed(feed)
     .then(feed => {
-      debugger;
       return dispatch(receiveNewFeed(feed));
     })
     .fail(error => {
-      debugger;
       return dispatch(receiveFeedErrors(error.responseJSON));
     })
 );

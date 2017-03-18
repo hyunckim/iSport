@@ -1,6 +1,6 @@
 class Api::FeedsController < ApplicationController
   def show
-    @feed = Feed.find_by(params[:id])
+    @feed = Feed.find(params[:id])
     render :show
   end
 

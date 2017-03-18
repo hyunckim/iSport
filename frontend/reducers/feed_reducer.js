@@ -5,7 +5,7 @@ const FeedReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_FEED:
-      return action.feed;
+      return merge({}, state, action.feed);
     case RECEIVE_FEEDS:
       return action.feeds;
     default:

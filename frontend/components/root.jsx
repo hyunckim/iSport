@@ -5,6 +5,7 @@ import App from './app';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import FeedFormContainer from './feed/feed_form_container';
+import FeedDetailContainer from './feed/feed_detail_container';
 
 const Root = ({ store }) => {
 
@@ -29,6 +30,7 @@ const Root = ({ store }) => {
         <IndexRoute component={ SplashContainer } onEnter={ _redirectIfLoggedIn }/>
         <Route path="home" component={ HomeContainer } onEnter={ _ensureLoggedIn } />
         <Route path="newfeed" component={ FeedFormContainer } onEnter={ _ensureLoggedIn} />
+        <Route path="feed/:feedId" component={ FeedDetailContainer } />
       </Route>
     </Router>
   </Provider>

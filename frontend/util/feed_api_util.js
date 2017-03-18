@@ -1,7 +1,7 @@
-export const fetchFeed = (feed) => (
+export const fetchFeed = (feedId) => (
   $.ajax({
     method: "GET",
-    url: `/api/feeds/${feed.id}`,
+    url: `/api/feeds/${feedId}`,
   })
 );
 
