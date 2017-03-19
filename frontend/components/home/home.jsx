@@ -7,8 +7,6 @@ class Home extends React.Component {
     super(props);
   }
 
-
-
   render() {
     return (
       <div className="home-container">

@@ -9,10 +9,10 @@ class FeedDetail extends React.Component {
   componentDidMount() {
     this.props.fetchFeed();
 
-    if (this.props.feed) {
-    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.props.feed.url}`})
+    //if (this.props.feed) {
+    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=http://www.espn.com/espn/rss/news`})
       .then((res) => this.setState({ response: res.items }));
-    }
+    //}
   }
 
   render() {
@@ -21,10 +21,11 @@ class FeedDetail extends React.Component {
       let articles = this.state.response;
       if (articles) {
         parsedArticles = articles.map(article => {
-          return (<li>
+          return (<li className="article-box">
             <ul>
-              <li>{ article.title }</li>
-              <li>{ article.description }</li>
+              <img src={ article.enclosure.link } className="article-image"></img>
+              <li className="article-title">{ article.title }</li>
+              <li className="article-description">{ article.description }</li>
             </ul>
           </li>);
         });
@@ -32,7 +33,7 @@ class FeedDetail extends React.Component {
     } else {
       parsedArticles = "";
     }
-    return <ul>
+    return <ul className= "article-container">
       { parsedArticles }
     </ul>;
   }

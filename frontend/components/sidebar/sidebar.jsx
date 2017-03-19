@@ -1,16 +1,20 @@
 import React from 'react';
 
 class Sidebar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
-    return (
-      <div className="sidebar-container">
-        <h3>Sidebar</h3>
-      </div>
-    );
+    if (this.props.currentUser) {
+      return (
+        <div className="sidebar-container">
+          <h3>Sidebar</h3>
+        </div>
+      );
+    } else {
+    return <div></div>;
+    }
   }
 }
 
