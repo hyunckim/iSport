@@ -10,6 +10,10 @@ class Sidebar extends React.Component {
       return (
         <div className="sidebar-container">
           <h3>Sidebar</h3>
+          <button className="add-button">
+            <i className="fa fa-plus" aria-hidden="true"></i>
+            <span className="add-content">Add Content</span>
+          </button>
         </div>
       );
     } else {

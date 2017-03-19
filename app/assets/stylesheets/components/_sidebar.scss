@@ -1,6 +1,6 @@
 .sidebar-container {
   position: fixed;
-  width: 15%;
+  width: 225px;
   height: 100%;
   background-color: $blue;
   z-index: 1;
@@ -12,4 +12,14 @@
 }
 
 .main-app {
+}
+
+.add-button {
+  position: absolute;
+  color: white;
+  width: 100%;
+  background-color: $custom-blue;
+  height: 50px;
+  text-align: center;
+  bottom: 0;
 }
