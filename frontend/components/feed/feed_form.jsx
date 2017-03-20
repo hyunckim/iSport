@@ -24,12 +24,21 @@ class FeedForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          <label>Title<input type="text" onChange={ this.update('title') } value={ this.state.title } /></label><br />
-          <label>Description<input type="text" onChange={ this.update('description') } value={ this.state.description } /></label><br />
-          <label>URL<input type="text" onChange={ this.update('url') } value={ this.state.url } /></label><br />
-          <label>Image<input type="text" onChange={ this.update('image') } value={ this.state.image } /></label><br />
-          <input type="submit" value="Create Feed" onClick={ this.handleSubmit } />
+        <form className="feed-form">
+          <label>Title<input type="text" onChange={ this.update('title') }
+            value={ this.state.title } /></label><br />
+
+          <label>Description<input type="text" onChange={ this.update('description') }
+            value={ this.state.description } /></label><br />
+
+          <label>URL<input type="text" onChange={ this.update('url') }
+            value={ this.state.url } /></label><br />
+
+          <label>Image<input type="text" onChange={ this.update('image') }
+            value={ this.state.image } /></label><br />
+
+          <input type="submit" value="Create Feed"
+            onClick={ this.handleSubmit } />
         </form>
       </div>
     );

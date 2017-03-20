@@ -1,4 +1,5 @@
 import React from 'react';
+import ModalArticle from '../article/modal_article';
 
 class FeedDetail extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class FeedDetail extends React.Component {
     this.props.fetchFeed();
 
     //if (this.props.feed) {
-    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=http://www.espn.com/espn/rss/news`})
+    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=http://www.nba.com/warriors/rss.xml`})
       .then((res) => this.setState({ response: res.items }));
     //}
   }
@@ -23,9 +24,14 @@ class FeedDetail extends React.Component {
         parsedArticles = articles.map(article => {
           return (<li className="article-box">
             <ul>
-              <img src={ article.enclosure.link } className="article-image"></img>
+              <ModalArticle article={ article } />
               <li className="article-title">{ article.title }</li>
               <li className="article-description">{ article.description }</li>
+              <div className="article-date-feed-container">
+                <img src={ this.props.feed.image } className="article-feed-img"></img>
+                <li className="article-feed">{ this.props.feed.title }</li>
+                <li className="article-date">{ article.pubDate }</li>
+              </div>
             </ul>
           </li>);
         });

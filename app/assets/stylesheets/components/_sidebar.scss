@@ -3,7 +3,7 @@
   width: 225px;
   height: 100%;
   background-color: $blue;
-  z-index: 1;
+  z-index: 2;
 }
 
 .sidebar-nav {
@@ -16,10 +16,28 @@
 
 .add-button {
   position: absolute;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: sans-serif;
   color: white;
   width: 100%;
   background-color: $custom-blue;
   height: 50px;
   text-align: center;
   bottom: 0;
+}
+
+.fa-plus {
+  margin-right: 5px;
+}
+
+.sidebar-pin {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: 1px solid white;
+}
+
+.pin-toggle:checked ~ .sidebar-container {
+  background-color: white;
 }
