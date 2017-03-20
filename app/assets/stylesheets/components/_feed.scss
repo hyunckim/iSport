@@ -56,4 +56,97 @@
 }
 
 .feed-form {
+  width: 840px;
+  padding-top: 175px;
+  padding-left: 155px;
+  padding-right: 155px;
+}
+
+.new-feed-description {
+  font-family: sans-serif;
+  margin: 24px 0;
+  font-size: 1.25rem;
+  color: $gray;
+  font-weight: 300;
+}
+
+.new-feed-bar {
+  position: relative;
+  transition: width 2s;
+}
+
+.new-feed-url {
+  box-sizing: border-box;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  padding: 10px 10px 10px 55px;
+  width: 70%;
+  height: 55px;
+  -webkit-transition: width 2s;
+  transition-duration: 0.7s;
+}
+
+
+.new-feed-url:focus {
+  box-shadow: 0 0 5px $blue;
+  border: 1px solid $blue;
+}
+
+.new-feed-icon {
+  padding-left: 0.75rem;
+  font-size: 1.5rem;
+  padding-top: 5px;
+  padding-bottom: auto;
+}
+
+.help-guide {
+  float: right;
+}
+
+
+.pResult {
+  font-size: 12px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-weight: bold;
+  color: #757575;
+}
+
+.feed-result-image {
+  width: 78px;
+  height: 78px;
+  padding-right: 10px;
+}
+
+.feed-result {
+  display: flex;
+}
+
+.feed-result-detail {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60px;
+  font-family: sans-serif;
+  width: 540px;
+}
+
+.feed-result-title {
+  font-weight: bold;
+}
+
+.feed-result-description {
+  color: #757575;
+}
+
+.follow-btn {
+  border: 1px solid $custom-blue;
+  font-family: sans-serif;
+  padding: 4px 15px;
+  height: 22px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  color: $custom-blue;
 }

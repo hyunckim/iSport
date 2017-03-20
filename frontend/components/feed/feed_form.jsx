@@ -17,29 +17,54 @@ class FeedForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchNewFeed(this.state)
-      .then(() => hashHistory.push('home'));
+    let feed;
+    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=http://www.nba.com/warriors/rss.xml`})
+      .then((res) => {
+        let result = res.feed;
+        this.setState({title: result.title, description: result.description, image: result.image });
+      });
   }
 
   render() {
+    let pResult;
+    let imageResult = null;
+    let titleResult;
+    let descriptionResult;
+    let followBtn = null;
+    if (this.state.title) {
+      pResult = "RESULTS";
+      imageResult = <img src={ this.state.image } className="feed-result-image" />;
+      titleResult = this.state.title;
+      descriptionResult = this.state.description;
+      followBtn = <button className="follow-btn">FOLLOW</button>;
+    }
+
     return (
       <div>
         <form className="feed-form">
-          <label>Title<input type="text" onChange={ this.update('title') }
-            value={ this.state.title } /></label><br />
+          <p className="new-feed-description">Want to add your own feed to iSport?</p>
+          <div className="new-feed-bar">
+            <i className="fa fa-search new-feed-icon" aria-hidden="true"></i>
+            <input type="text" onChange={ this.update('url') } value={ this.state.url } className="new-feed-url"
+              placeholder='Enter RSS feed e.g. http://www.espn.com/espn/rss/news '/>
+          </div>
+          <p className="help-guide">New to RSS feed?</p>
+          <button className="search-feed-btn"
+            onClick={ this.handleSubmit }>Search Feed</button>
 
-          <label>Description<input type="text" onChange={ this.update('description') }
-            value={ this.state.description } /></label><br />
+          <div className="search-result-container">
+            <p className="pResult">{ pResult }</p>
 
-          <label>URL<input type="text" onChange={ this.update('url') }
-            value={ this.state.url } /></label><br />
-
-          <label>Image<input type="text" onChange={ this.update('image') }
-            value={ this.state.image } /></label><br />
-
-          <input type="submit" value="Create Feed"
-            onClick={ this.handleSubmit } />
-        </form>
+            <div className="feed-result">
+              { imageResult }
+              <div className="feed-result-detail">
+                <p className="feed-result-title">{ titleResult }</p>
+                <p className="feed-result-description">{ descriptionResult }</p>
+              </div>
+              { followBtn }
+            </div>
+        </div>
+      </form>
       </div>
     );
   }
