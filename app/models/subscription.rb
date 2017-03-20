@@ -1,8 +1,7 @@
 class Subscription < ApplicationRecord
 
-  validates :collection_id, :feed_id, presence: true;
+  validates :collection, :feed, presence: true;
 
   belongs_to :collection
-
   belongs_to :feed
 end

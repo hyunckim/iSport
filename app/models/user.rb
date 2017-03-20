@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
-  has_many :collections
+  has_many :collections, dependent: :destroy
 
   attr_reader :password
 
