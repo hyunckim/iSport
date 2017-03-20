@@ -1,4 +1,4 @@
-import { RECEIVE_FEED, RECEIVE_FEEDS } from '../actions/feed_actions';
+import { RECEIVE_FEED, RECEIVE_FEEDS, RECEIVE_NEW_FEED } from '../actions/feed_actions';
 import { merge } from 'lodash';
 
 const FeedReducer = (state = {}, action) => {
@@ -8,6 +8,8 @@ const FeedReducer = (state = {}, action) => {
       return merge({}, state, action.feed);
     case RECEIVE_FEEDS:
       return action.feeds;
+    case RECEIVE_NEW_FEED:
+      return merge({}, state, action.feed);
     default:
       return state;
   }
