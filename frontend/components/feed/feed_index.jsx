@@ -21,7 +21,7 @@ class FeedIndex extends React.Component {
   render() {
     let allFeeds = this.props.feeds.map(feed => {
       return (
-        <li className="feed-index-item" key={feed.id} onClick= { this.directToDetail(feed) }>
+        <li className="feed-index-item" key={feed.id}>
           <FeedIndexItem feed={ feed } />
         </li>
       );
