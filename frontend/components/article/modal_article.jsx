@@ -20,7 +20,7 @@ const customStyles = {
     bottom: '0',
     width: '70vw',
     borderLeft: "1px solid gray",
-    padding: "2rem",
+    padding: "6rem",
   }
 };
 
@@ -55,6 +55,11 @@ class ModalArticle extends React.Component {
 
     render() {
       let { article } = this.props;
+      let author = "";
+
+      if ( article.author ) {
+        author = `by ${ article.author }`;
+      }
       return (
         <div>
           <img onClick={this.openModal} className="article-image" src={article.enclosure.link}></img>
@@ -67,13 +72,15 @@ class ModalArticle extends React.Component {
             className="article-modal"
           >
           <div className="article-modal-detail">
-            <h1 className="article-modal-title">{ article.title }</h1>
-            <p className="article-modal-author">{ article.author }</p>
-            <p className="article-modal-pubDate">{ article.pubDate }</p>
+            <div className="article-modal-header">
+              <h1 className="article-modal-title">{ article.title }</h1>
+              <p className="article-modal-author">{ author }</p>
+              <p className="article-modal-pubDate">published: { article.pubDate }</p>
+            </div>
             <img className="article-modal-image" src={ article.enclosure.link }></img>
             <p className="article-modal-content">{ article.content }</p>
-            { article.link }
-          </div>
+            <a href={`${ article.link }`} className="link-button">Visit Website</a>
+            </div>
           </Modal>
         </div>
       );
