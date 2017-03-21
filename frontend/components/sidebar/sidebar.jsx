@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
             <button className={ this.state.pin } onClick={ this.pinSidebar } >{ this.state.pin }</button>
             <input type="checkbox" className="pin-toggle" />
           </div>
-
+          <p className="collection-header">FEEDS</p>
           <CollectionIndexContainer />
           <button className="add-button" onClick={ this.addContent }>
             <i className="fa fa-plus" aria-hidden="true"></i>

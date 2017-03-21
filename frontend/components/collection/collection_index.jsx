@@ -9,17 +9,15 @@ class CollectionIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchCollections();
-    debugger;
   }
 
   render() {
-    debugger;
     let allCollections;
     if (this.props.collections) {
       allCollections = this.props.collections.map(collection => {
         return (
           <li className="collection-index-item" key={collection.id}>
-            <CollectionIndexItem collection={ collection } />
+            <CollectionIndexItem collection={ collection } feeds={ this.props.feeds } />
           </li>
         );});
       }
