@@ -24,10 +24,12 @@ class FeedDetail extends React.Component {
   }
 
   render() {
-    let parsedArticles;
+    let parsedArticles="";
+    let feedTitle="";
     if (Object.keys(this.state.response).length) {
       let articles = this.state.response;
       if (articles) {
+        feedTitle = this.props.feed.title;
         parsedArticles = articles.map(article => {
           return (<li className="article-box">
             <ul>
@@ -43,18 +45,16 @@ class FeedDetail extends React.Component {
           </li>);
         });
       }
-    } else {
-      parsedArticles = "";
     }
     return (
       <div className="feed-detail-container">
         <header className="feed-detail-header">
-          <h2 className="feed-detail-title">Golden-State-Warriors</h2>
+          <h2 className="feed-detail-title">{ feedTitle }</h2>
           <p className="pLatest">LATEST</p>
         </header>
         <ul className= "article-container">
           { parsedArticles }
-        </ul>;
+        </ul>
       </div>
     );
   }

@@ -14,16 +14,22 @@ class CollectionIndexItem extends React.Component {
 
     let collection_feed = this.props.collection.feeds.map(id => {
       return (
-        <li key={id}>
-          { feeds[id].title }
+        <li key={id} className="subscription-feed-container">
+          <img src={ feeds[id].image } className="subscription-feed-img"></img>
+          <h2 className="subscription-feed">{ feeds[id].title }</h2>
         </li>
       );
     });
 
     return (
       <div>
-        <p>{ this.props.collection.title }</p>
-        { collection_feed }
+        <li className="collection-display">
+          <i className="fa fa-angle-right" aria-hidden="true"></i>
+          <p>{ this.props.collection.title }</p>
+        </li>
+          <ul>
+            { collection_feed }
+          </ul>
       </div>
 
     );

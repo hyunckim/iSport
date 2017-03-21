@@ -16,15 +16,16 @@ class CollectionIndex extends React.Component {
     if (this.props.collections) {
       allCollections = this.props.collections.map(collection => {
         return (
-          <li className="collection-index-item" key={collection.id}>
             <CollectionIndexItem collection={ collection } feeds={ this.props.feeds } />
-          </li>
         );});
       }
     return (
       <div className="collection-container">
         <ul>
-          <li>All</li>
+          <li className="collection-display">
+            <i className="fa fa-bars"></i>
+            <p>All</p>
+          </li>
           { allCollections }
         </ul>
       </div>
