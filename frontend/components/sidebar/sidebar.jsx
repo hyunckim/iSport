@@ -10,6 +10,9 @@ class Sidebar extends React.Component {
     this.pinSidebar = this.pinSidebar.bind(this);
   }
 
+  componentDidMount() {
+  }
+
   addContent(e) {
     e.preventDefault();
     hashHistory.push(`newfeed`);

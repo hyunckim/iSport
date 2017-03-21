@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchCollections } from '../../actions/collection_actions';
+import { fetchFeeds } from '../../actions/feed_actions';
 import CollectionIndex from './collection_index';
 
 const mapStateToProps = state => ({
@@ -8,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCollections:() => dispatch(fetchCollections())
+  fetchCollections:() => dispatch(fetchCollections()),
+  fetchFeeds:() => dispatch(fetchFeeds())
 });
 
 export default connect(

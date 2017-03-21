@@ -46,7 +46,6 @@ class ModalArticle extends React.Component {
     }
 
     afterOpenModal() {
-      this.refs.subtitle.style.color = '#f00';
     }
 
     closeModal() {

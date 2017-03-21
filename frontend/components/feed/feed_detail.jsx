@@ -20,6 +20,9 @@ class FeedDetail extends React.Component {
     if (!this.props.feed && nextProps.feed) {
       $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${nextProps.feed.url}`})
         .then((res) => this.setState({ response: res.items }));
+    } else if ( this.props.feed.id != nextProps.feed.id) {
+      $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${nextProps.feed.url}`})
+        .then((res) => this.setState({ response: res.items }));
     }
   }
 
@@ -30,16 +33,16 @@ class FeedDetail extends React.Component {
       let articles = this.state.response;
       if (articles) {
         feedTitle = this.props.feed.title;
-        parsedArticles = articles.map(article => {
-          return (<li className="article-box">
+        parsedArticles = articles.map((article, idx) => {
+          return (<li className="article-box" key={idx} >
             <ul>
               <ModalArticle article={ article } />
-              <li className="article-title">{ article.title }</li>
-              <li className="article-description">{ article.description }</li>
+              <li className="article-title" key={1}>{ article.title }</li>
+              <li className="article-description" key={2}>{ article.description }</li>
               <div className="article-date-feed-container">
                 <img src={ this.props.feed.image } className="article-feed-img"></img>
-                <li className="article-feed">{ this.props.feed.title }</li>
-                <li className="article-date">{ article.pubDate }</li>
+                <li className="article-feed" key={3}>{ this.props.feed.title }</li>
+                <li className="article-date" key={4}>{ article.pubDate }</li>
               </div>
             </ul>
           </li>);

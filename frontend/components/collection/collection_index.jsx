@@ -9,20 +9,21 @@ class CollectionIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchCollections();
+    this.props.fetchFeeds();
   }
 
   render() {
     let allCollections;
     if (this.props.collections) {
-      allCollections = this.props.collections.map(collection => {
+      allCollections = this.props.collections.map((collection, idx) => {
         return (
-            <CollectionIndexItem collection={ collection } feeds={ this.props.feeds } />
+            <CollectionIndexItem collection={ collection } feeds={ this.props.feeds } key={ idx } />
         );});
       }
     return (
       <div className="collection-container">
         <ul>
-          <li className="collection-display">
+          <li className="collection-display" key={ 100 }>
             <i className="fa fa-bars"></i>
             <p>All</p>
           </li>
