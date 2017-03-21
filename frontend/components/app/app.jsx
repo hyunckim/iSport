@@ -6,7 +6,7 @@ const App = (props) => {
   return (
   <div className="main-app">
     <div className="sidebar-nav">
-      <SidebarContainer currentUser={props.currentUser}/>
+      <SidebarContainer />
       <NavbarContainer />
     </div>
     <div className="main-content">

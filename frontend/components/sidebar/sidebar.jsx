@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import CollectionIndexContainer from '../collection/collection_index_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -28,6 +29,8 @@ class Sidebar extends React.Component {
             <button className={ this.state.pin } onClick={ this.pinSidebar } >{ this.state.pin }</button>
             <input type="checkbox" className="pin-toggle" />
           </div>
+
+          <CollectionIndexContainer />
           <button className="add-button" onClick={ this.addContent }>
             <i className="fa fa-plus" aria-hidden="true"></i>
             <span className="add-content">ADD CONTENT</span>

@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import App from './app';
 
 const mapStateToProps = state => ({
-  currentUser: state.currentUser
+  currentUser: state.currentUser,
+  collections: state.collections
 });
 
 const mapDispatchToProps = dispatch => ({

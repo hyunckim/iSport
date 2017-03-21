@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :collections, dependent: :destroy
 
+  has_many :feeds, through: :collections
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)

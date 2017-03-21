@@ -4,21 +4,28 @@ import ModalArticle from '../article/modal_article';
 class FeedDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {response: ""};
+    this.state = {response: {}};
   }
 
   componentDidMount() {
     this.props.fetchFeed();
 
-    //if (this.props.feed) {
-    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=http://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba`})
-      .then((res) => this.setState({ response: res.items }));
-    //}
+    if (this.props.feed) {
+      $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.props.feed.url}`})
+        .then((res) => this.setState({ response: res.items }));
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!this.props.feed && nextProps.feed) {
+      $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${nextProps.feed.url}`})
+        .then((res) => this.setState({ response: res.items }));
+    }
   }
 
   render() {
     let parsedArticles;
-    if (this.state.response) {
+    if (Object.keys(this.state.response).length) {
       let articles = this.state.response;
       if (articles) {
         parsedArticles = articles.map(article => {
