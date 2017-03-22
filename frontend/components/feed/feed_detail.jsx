@@ -29,22 +29,34 @@ class FeedDetail extends React.Component {
   render() {
     let parsedArticles="";
     let feedTitle="";
+    let buttonContent = "FOLLOW";
+
+    if (this.props.collections.length) {
+      let { feed } = this.props;
+      this.props.collections.forEach(collection => {
+        if (collection.feeds.includes(feed.id)) {
+          buttonContent = "FOLLOWING";
+        }
+      });
+    }
+
     if (Object.keys(this.state.response).length) {
       let articles = this.state.response;
       if (articles) {
         feedTitle = this.props.feed.title;
         parsedArticles = articles.map((article, idx) => {
-          return (<li className="article-box" key={idx} >
-            <ul>
+          return (
+            <li className="article-box" key={idx} >
               <ModalArticle article={ article } />
-              <li className="article-title" key={1}>{ article.title }</li>
-              <li className="article-description" key={2}>{ article.description }</li>
-              <div className="article-date-feed-container">
-                <img src={ this.props.feed.image } className="article-feed-img"></img>
-                <li className="article-feed" key={3}>{ this.props.feed.title }</li>
-                <li className="article-date" key={4}>{ article.pubDate }</li>
+              <div className="article-content-container">
+                <p className="article-title" >{ article.title }</p>
+                <p className="article-description" >{ article.description }</p>
+                <div className="article-date-feed-container">
+                  <img src={ this.props.feed.image } className="article-feed-img"></img>
+                  <p className="article-feed" >{ feedTitle }</p>
+                  <p className="article-date" >{ article.pubDate }</p>
+                </div>
               </div>
-            </ul>
           </li>);
         });
       }
@@ -52,8 +64,11 @@ class FeedDetail extends React.Component {
     return (
       <div className="feed-detail-container">
         <header className="feed-detail-header">
-          <h2 className="feed-detail-title">{ feedTitle }</h2>
-          <p className="pLatest">LATEST</p>
+          <div className="feed-detail-header-divider">
+            <h2 className="feed-detail-title">{ feedTitle }</h2>
+            <p className="pLatest">LATEST</p>
+          </div>
+          <button className="follow-button">{ buttonContent }</button>
         </header>
         <ul className= "article-container">
           { parsedArticles }

@@ -6,24 +6,24 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding-top: 200px;
 }
 
 .feed-item {
   position: relative;
-  border: 1px solid $light-gray;
-  width: 250px;
-  height: 250px;
-  margin: 10px;
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .feed-logo {
   position: absolute;
   width: 100%;
   height: 140px;
-  z-index: -1;
 }
 
-.feed-title:hover {
+.feed-title:hover,
+.feed-logo:hover {
   cursor: pointer;
 }
 
@@ -40,6 +40,8 @@
   padding: 16px;
   height: 36px;
   border-bottom: 1px solid $light-gray;
+  background-color: $custom-blue;
+  color: white;
 }
 
 .feed-subscribe {

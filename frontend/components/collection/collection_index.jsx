@@ -25,7 +25,7 @@ class CollectionIndex extends React.Component {
         <ul>
           <li className="collection-display" key={ 100 }>
             <i className="fa fa-bars"></i>
-            <p>All</p>
+              <p>All</p>
           </li>
           { allCollections }
         </ul>

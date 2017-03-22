@@ -11,6 +11,7 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchCollections();
   }
 
   addContent(e) {
@@ -27,12 +28,10 @@ class Sidebar extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="sidebar-container">
-          <h3>Sidebar</h3>
-          <div className="sidebar-pin">
-            <button className={ this.state.pin } onClick={ this.pinSidebar } >{ this.state.pin }</button>
-            <input type="checkbox" className="pin-toggle" />
+          <div className= "all-gear-container">
+            <p className="collection-header">FEEDS</p>
+            <i className="fa fa-cog" aria-hidden="true"></i>
           </div>
-          <p className="collection-header">FEEDS</p>
           <CollectionIndexContainer />
           <button className="add-button" onClick={ this.addContent }>
             <i className="fa fa-plus" aria-hidden="true"></i>

@@ -1,15 +1,38 @@
 .collection-container {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: $custom-blue;
   line-height: 28px;
 }
 
-.collection-header {
+
+.all-gear-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 90%;
   margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.collection-header {
+  padding-top: 8px;
   height: 28px;
   font-size: 11px;
-  justify-content: center;
+  font-weight: bold;
+  color: $custom-blue;
+}
+
+.fa-cog {
+  font-size: 15px;
+  padding-top: 5px;
+  color: $custom-blue;
+}
+
+.fa-cog:hover {
+  font-weight: 400;
+  color: black;
+  cursor: pointer;
 }
 
 .collection-display {

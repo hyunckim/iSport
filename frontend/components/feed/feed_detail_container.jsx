@@ -4,7 +4,8 @@ import { fetchFeed } from '../../actions/feed_actions';
 
 const mapStateToProps = (state, { params }) => {
   return ({
-    feed: state.feeds[params.feedId]
+    feed: state.feeds[params.feedId],
+    collections: Object.keys(state.collections).map(id => state.collections[id])
   });
 };
 

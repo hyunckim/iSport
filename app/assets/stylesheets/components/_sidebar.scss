@@ -1,11 +1,12 @@
 .sidebar-container {
   position: fixed;
-  width: 195px;
+  width: 215px;
   height: 100%;
-  background-color: $blue;
+  background-color: #f2f2f2;
   z-index: 2;
   padding-left: 15px;
   padding-right: 15px;
+  color: black;
 }
 
 .sidebar-nav {
@@ -33,15 +34,4 @@
 
 .fa-plus {
   margin-right: 5px;
-}
-
-.sidebar-pin {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  border: 1px solid white;
-}
-
-.pin-toggle:checked ~ .sidebar-container {
-  background-color: white;
 }
