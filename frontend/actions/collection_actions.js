@@ -1,5 +1,6 @@
 export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
 export const RECEIVE_COLLECTIONS = "RECEIVE_COLLECTIONS";
+import * as SubscriptionAPIUtil from '../util/subscription_api_util';
 import * as CollectionAPIUtil from '../util/collection_api_util';
 import { receiveCollectionErrors } from './error_actions';
 
@@ -22,6 +23,14 @@ export const fetchNewCollection = (collection) => dispatch => (
     })
     .fail(error => {
       return dispatch(receiveCollectionErrors(error.responseJSON));
+    })
+);
+
+export const subscribe = (subscription) => dispatch => (
+  SubscriptionAPIUtil.subscribe(subscription)
+    .then(updatedCollection => {
+      debugger;
+      return dispatch(receiveCollection(updatedCollection));
     })
 );
 

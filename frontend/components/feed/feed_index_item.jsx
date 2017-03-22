@@ -4,6 +4,14 @@ import { hashHistory } from 'react-router';
 class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
+  }
+
+  follow(feed_id) {
+    return e => {
+      e.preventDefault();
+      this.props.subscribe({collection_id: 1, feed_id: feed_id});
+    };
   }
 
   directToDetail(feedId) {
@@ -20,7 +28,7 @@ class FeedIndexItem extends React.Component {
         <img src={ feed.image } className="feed-logo" onClick= { this.directToDetail(feed.id) }></img>
         <p className="feed-title" onClick= { this.directToDetail(feed.id) }>{ feed.title }</p>
         <p className="feed-description">{ feed.description }</p>
-        <p className="feed-subscribe">FOLLOW</p>
+        <p className="feed-subscribe" onClick= { this.follow(feed.id) }>FOLLOW</p>
       </div>
     );
   }

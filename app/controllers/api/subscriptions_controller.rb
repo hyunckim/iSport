@@ -1,7 +1,7 @@
 class Api::SubscriptionsController < ApplicationController
 
   def create
-    @subscription = Subscription.create(subscriptions_params)
+    @subscription = Subscription.create(subscription_params)
     if @subscription.save
       @collection = @subscription.collection
       render 'api/collections/show'
