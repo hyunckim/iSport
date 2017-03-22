@@ -61,7 +61,18 @@ class ModalArticle extends React.Component {
       }
       return (
         <div>
-          <img onClick={this.openModal} className="article-image" src={article.enclosure.link}></img>
+          <li className="article-box" key={article.title} onClick={this.openModal}>
+            <img className="article-image" src={article.enclosure.link}></img>
+            <div className="article-content-container">
+              <p className="article-title" >{ article.title }</p>
+              <p className="article-description" >{ article.description }</p>
+              <div className="article-date-feed-container">
+                <img src={ this.props.feed.image } className="article-feed-img"></img>
+                <p className="article-feed" >{ this.props.feed.title }</p>
+                <p className="article-date" >{ article.pubDate }</p>
+              </div>
+            </div>
+          </li>
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}

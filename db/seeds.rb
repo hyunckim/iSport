@@ -21,8 +21,25 @@ title: "LA Clippers",
 description: "Los Angeles Clippers Team News",
 image: "http://www.logoeps.com/wp-content/uploads/2012/12/los-angeles-clippers-logo-vector.png")
 
+cbs_feed= Feed.create(url: "http://rss.cbssports.com/rss/headlines",
+  title: "CBSSports.com",
+  description: "The latest news from CBSSports.com",
+  image: "https://pbs.twimg.com/profile_images/696218981145772033/8mYnTpHm.png")
+
+sports_world_news = Feed.create(url: "https://rss2json.com/#rss_url=http%3A%2F%2Fwww.sportsworldnews.com%2Frss%2Farchives%2Fall.xml",
+  title: "Sports World News",
+  description: "Top News RSS Feed",
+  image: "https://pbs.twimg.com/profile_images/466596743170121729/1yY1CeHZ_400x400.png")
+
+
+
+
+
 collection1 = Collection.create(title:"Basketball", user_id: 1)
 collection2 = Collection.create(title:"Football", user_id: 1)
+collection3 = Collection.create(title:"Tennis", user_id: 1)
+collection4 = Collection.create(title:"Soccer", user_id: 1)
+collection5 = Collection.create(title:"Boxing", user_id: 1)
 
 subscription1 = Subscription.create(feed_id: 1, collection_id: 1)
 subscription2 = Subscription.create(feed_id: 2, collection_id: 1)

@@ -29,7 +29,6 @@ export const fetchNewCollection = (collection) => dispatch => (
 export const subscribe = (subscription) => dispatch => (
   SubscriptionAPIUtil.subscribe(subscription)
     .then(updatedCollection => {
-      debugger;
       return dispatch(receiveCollection(updatedCollection));
     })
 );
