@@ -1,5 +1,5 @@
 json.set! @collection.id do
   json.id @collection.id
-  json.feed collection.feeds, :id
+  json.feeds @collection.feeds.ids
   json.title @collection.title
 end

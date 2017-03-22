@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :feeds, only: [:show, :index, :create]
     resources :collections, except: [:new, :edit]
+    resources :subscriptions, only: [:create, :destroy]
   end
 end
