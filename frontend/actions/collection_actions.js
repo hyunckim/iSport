@@ -1,6 +1,5 @@
 export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
 export const RECEIVE_COLLECTIONS = "RECEIVE_COLLECTIONS";
-export const RECEIVE_NEW_COLLECTION = "RECEIVE_NEW_COLLECTION";
 import * as CollectionAPIUtil from '../util/collection_api_util';
 import { receiveCollectionErrors } from './error_actions';
 
@@ -19,7 +18,7 @@ export const fetchCollections = () => dispatch => (
 export const fetchNewCollection = (collection) => dispatch => (
   CollectionAPIUtil.createCollection(collection)
     .then(collection => {
-      return dispatch(receiveNewCollection(collection));
+      return dispatch(receiveCollection(collection));
     })
     .fail(error => {
       return dispatch(receiveCollectionErrors(error.responseJSON));
@@ -34,9 +33,4 @@ const receiveCollection = collection => ({
 const receiveCollections = (collections) => ({
   type: RECEIVE_COLLECTIONS,
   collections
-});
-
-const receiveNewCollection = (collection) => ({
-  type: RECEIVE_NEW_COLLECTION,
-  collection
 });

@@ -8,8 +8,6 @@ const CollectionReducer = (state = {}, action) => {
       return merge({}, state, action.collection);
     case RECEIVE_COLLECTIONS:
       return action.collections;
-    case RECEIVE_NEW_COLLECTION:
-      return merge({}, state, action.collection);
     default:
       return state;
   }

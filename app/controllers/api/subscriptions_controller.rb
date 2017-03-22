@@ -12,7 +12,7 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def destroy
-    
+
   end
 
   private
