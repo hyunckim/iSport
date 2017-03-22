@@ -6,6 +6,7 @@ class Navbar extends React.Component {
  constructor(props) {
    super(props);
    this.handleLogOut = this.handleLogOut.bind(this);
+   this.directHome = this.directHome.bind(this);
  }
 
  handleLogOut(e) {
@@ -20,6 +21,11 @@ class Navbar extends React.Component {
    }
  }
 
+ directHome(e) {
+   e.preventDefault();
+   this.props.router.replace('home');
+ }
+
  render() {
 
    const welcomeMessage = this.props.currentUser ? `Welcome ${this.props.currentUser.email}` : "";
@@ -27,7 +33,7 @@ class Navbar extends React.Component {
    return (
      <div className="navbar">
        <div className="center-container">
-         <div className="nav-logo">
+         <div className="nav-logo" onClick={ this.directHome }>
            <span className="nav-logo1">i</span><span className="nav-logo2">S</span><span className="nav-logo3">PORT</span>
          </div>
          { this.logoutButton() }
