@@ -18,9 +18,11 @@ class FeedForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let feed;
-    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=http://www.nba.com/warriors/rss.xml`})
+    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.state.url}`})
       .then((res) => {
         let result = res.feed;
+        debugger;
+        this.props.fetchNewFeed({title: result.title, description: result.description, image: result.image });
         this.setState({title: result.title, description: result.description, image: result.image });
       });
   }
@@ -48,7 +50,6 @@ class FeedForm extends React.Component {
             <input type="text" onChange={ this.update('url') } value={ this.state.url } className="new-feed-url"
               placeholder='Enter RSS feed e.g. http://www.espn.com/espn/rss/news '/>
           </div>
-          <p className="help-guide">New to RSS feed?</p>
           <button className="search-feed-btn"
             onClick={ this.handleSubmit }>Search Feed</button>
 
