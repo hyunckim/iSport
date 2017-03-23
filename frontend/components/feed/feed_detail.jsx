@@ -55,7 +55,8 @@ class FeedDetail extends React.Component {
 
   createNewCollection(e) {
     e.preventDefault();
-    //create a new collection.
+    this.props.fetchNewCollection({ title: this.state.newCollection, feed_id: this.props.feed.id });
+    this.setState({ newCollection: ""} );
   }
 
   subscribe(collectionId) {

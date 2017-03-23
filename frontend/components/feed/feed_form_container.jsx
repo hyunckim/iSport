@@ -3,7 +3,8 @@ import { fetchFeed, fetchFeeds, fetchNewFeed } from '../../actions/feed_actions'
 import FeedForm from './feed_form';
 
 const mapStateToProps = state => ({
-  errors: state.errors.feed
+  errors: state.errors.feed,
+  collections: Object.keys(state.collections).map(id => state.collections[id])
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -21,7 +21,6 @@ class FeedForm extends React.Component {
     $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.state.url}`})
       .then((res) => {
         let result = res.feed;
-        debugger;
         this.props.fetchNewFeed({title: result.title, description: result.description, image: result.image });
         this.setState({title: result.title, description: result.description, image: result.image });
       });
@@ -33,6 +32,7 @@ class FeedForm extends React.Component {
     let titleResult;
     let descriptionResult;
     let followBtn = null;
+
     if (this.state.title) {
       pResult = "RESULTS";
       imageResult = <img src={ this.state.image } className="feed-result-image" />;
@@ -40,7 +40,6 @@ class FeedForm extends React.Component {
       descriptionResult = this.state.description;
       followBtn = <button className="follow-btn">FOLLOW</button>;
     }
-
     return (
       <div>
         <form className="feed-form">
@@ -64,11 +63,12 @@ class FeedForm extends React.Component {
               </div>
               { followBtn }
             </div>
-        </div>
-      </form>
+          </div>
+        </form>
       </div>
-    );
-  }
+      );
+
+    }
 }
 
 export default FeedForm;

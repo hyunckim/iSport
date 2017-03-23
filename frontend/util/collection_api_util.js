@@ -15,7 +15,7 @@ export const fetchCollection = (collectionId) => (
 export const createCollection = (collection) => (
   $.ajax({
     method: "POST",
-    url: `/api/collection`,
+    url: `/api/collections`,
     data: { collection }
   })
 );
