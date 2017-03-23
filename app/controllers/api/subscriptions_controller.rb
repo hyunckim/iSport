@@ -12,9 +12,9 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def destroy
-    @subscription = CollectionFeed.where(collection_id: params[:collection_feed][:collection_id]).where(feed_id: params[:collection_feed][:feed_id]).first
-
+    @subscription = Subscription.where(collection_id: params[:subscription][:collection_id]).where(feed_id: params[:subscription][:feed_id]).first
     if @subscription.destroy
+      @collection = Collection.find((params[:subscription][:collection_id]))
       render 'api/collections/show'
     else
       render json: ['Unable to unsubscribe'], status: 401

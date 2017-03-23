@@ -14,11 +14,10 @@ const customStyles = {
   },
   content : {
     position: "fixed",
-    top: '0',
-    left: 'auto',
+    top: 'auto',
     right: '0',
-    bottom: '0',
-    width: '70vw',
+    bottom: 'auto',
+    width: '50vw',
     borderLeft: "1px solid gray",
     padding: "6rem",
   }

@@ -1,5 +1,6 @@
 export const RECEIVE_COLLECTION = "RECEIVE_COLLECTION";
 export const RECEIVE_COLLECTIONS = "RECEIVE_COLLECTIONS";
+export const DELETE_SUBSCRIPTION = "DELETE_SUBSCRIPTION";
 import * as SubscriptionAPIUtil from '../util/subscription_api_util';
 import * as CollectionAPIUtil from '../util/collection_api_util';
 import { receiveCollectionErrors } from './error_actions';
@@ -33,6 +34,13 @@ export const subscribe = (subscription) => dispatch => (
     })
 );
 
+export const unsubscribe = (subscription) => dispatch => (
+  SubscriptionAPIUtil.unsubscribe(subscription)
+    .then(collection => {
+      return dispatch(deleteSubscription(collection));
+    })
+);
+
 const receiveCollection = collection => ({
   type: RECEIVE_COLLECTION,
   collection
@@ -41,4 +49,9 @@ const receiveCollection = collection => ({
 const receiveCollections = (collections) => ({
   type: RECEIVE_COLLECTIONS,
   collections
+});
+
+const deleteSubscription = (collection) => ({
+  type: DELETE_SUBSCRIPTION,
+  collection
 });

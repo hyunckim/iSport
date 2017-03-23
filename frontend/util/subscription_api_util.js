@@ -5,3 +5,11 @@ export const subscribe = (subscription) => (
     data: { subscription }
   })
 );
+
+export const unsubscribe = (subscription) => (
+  $.ajax({
+    method: "DELETE",
+    url: `/api/subscriptions/${subscription.collection_id}`,
+    data: { subscription }
+  })
+);

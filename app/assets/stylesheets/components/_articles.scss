@@ -48,7 +48,33 @@
   border-radius: 7px;
   cursor: pointer;
   height: 16px;
+  min-width: 75px;
   font-size: 12px;
+  justify-content: center;
+  text-align: center;
+}
+
+.subscription-name {
+  position: relative;
+  justify-content: space-between;
+}
+
+.follow-icon {
+  position: absolute;
+  right: 10px;
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-times {
+  color: red;
+}
+
+.fa-plus {
+  color: $custom-blue;
+  right: 6px;
 }
 
 .collection-dropdown {
@@ -82,6 +108,7 @@
   margin-bottom: 45px;
   margin-right: 40px;
   max-width: 625px;
+  max-height: 100px;
 }
 
 .article-box:hover {
@@ -97,7 +124,7 @@
 .article-image {
   height: auto;
   width: auto;
-  max-width: 175px;
+  max-width: 100px;
   margin-right: 20px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -149,6 +176,10 @@
   width: auto;
   height: 18px;
   float: left;
+}
+
+.ReactModal__Content--after-open .article-modal {
+  display: none
 }
 
 .article-modal {

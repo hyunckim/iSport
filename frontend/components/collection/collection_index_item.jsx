@@ -4,6 +4,7 @@ import { hashHistory } from 'react-router';
 class CollectionIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleCollection = this.toggleCollection.bind(this);
   }
 
   redirect(id) {
@@ -11,6 +12,21 @@ class CollectionIndexItem extends React.Component {
       event.preventDefault();
       hashHistory.push(`/feed/${id}`);
     };
+  }
+
+  toggleCollection(e) {
+    e.preventDefault();
+    if (e.currentTarget.className ==="fa fa-angle-right") {
+      e.currentTarget.classList.remove("fa-angle-right");
+      e.currentTarget.classList.add("fa-angle-down");
+      e.target.parentNode.parentElement.childNodes[1].classList.remove("collect-feed-container");
+      e.target.parentNode.parentElement.childNodes[1].classList.add("show");
+    } else {
+      e.currentTarget.classList.remove("fa-angle-down");
+      e.currentTarget.classList.add("fa-angle-right");
+      e.target.parentNode.parentElement.childNodes[1].classList.remove("show");
+      e.target.parentNode.parentElement.childNodes[1].classList.add("collect-feed-container");
+    }
   }
 
   render() {
@@ -28,12 +44,12 @@ class CollectionIndexItem extends React.Component {
     }
 
     return (
-      <div>
+      <div className={`${this.props.collection.title}-container`}>
         <li className="collection-display" key={this.props.collection.id}>
-          <i className="fa fa-angle-right" aria-hidden="true"></i>
+          <i className="fa fa-angle-right" onClick={ this.toggleCollection }aria-hidden="true"></i>
           <p>{ this.props.collection.title }</p>
         </li>
-          <ul>
+          <ul className="collect-feed-container">
             { collection_feed }
           </ul>
       </div>
