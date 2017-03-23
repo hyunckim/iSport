@@ -10,6 +10,8 @@ class FeedDetail extends React.Component {
     this.removeToggle = this.removeToggle.bind(this);
     this.moveOver = this.moveOver.bind(this);
     this.moveOut = this.moveOut.bind(this);
+    this.createNewCollection = this.createNewCollection.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +43,11 @@ class FeedDetail extends React.Component {
     });
   }
 
+  update(e) {
+    e.preventDefault();
+    this.setState({ newCollection: e.target.value });
+  }
+
   collectionDropdown(e) {
     e.preventDefault();
     document.getElementById("myDropdown").classList.toggle("show");
@@ -48,7 +55,7 @@ class FeedDetail extends React.Component {
 
   createNewCollection(e) {
     e.preventDefault();
-
+    //create a new collection.
   }
 
   subscribe(collectionId) {
@@ -84,16 +91,16 @@ class FeedDetail extends React.Component {
   }
 
   removeToggle(e) {
-    e.preventDefault();
-    if (!e.target.matches('.Follow-state') && !e.target.parentElement.parentElement.matches('.collection-dropdown')) {
-      let dropdowns = document.getElementsByClassName("collection-dropdown");
-      for (let i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
+    // e.preventDefault();
+    // if (!e.target.matches('.Follow-state')) {
+    //   let dropdowns = document.getElementsByClassName("collection-dropdown");
+    //   for (let i = 0; i < dropdowns.length; i++) {
+    //     let openDropdown = dropdowns[i];
+    //     if (openDropdown.classList.contains('show')) {
+    //       openDropdown.classList.remove('show');
+    //     }
+    //   }
+    // }
   }
 
   moveOver(e) {
@@ -149,7 +156,7 @@ class FeedDetail extends React.Component {
       }
     }
     return (
-      <div className="feed-detail-container" onClick={ this.removeToggle }>
+      <div className="feed-detail-container" >
         <header className="feed-detail-header">
           <div className="feed-detail-header-divider">
             <h2 className="feed-detail-title">{ feed.title }</h2>
@@ -161,19 +168,12 @@ class FeedDetail extends React.Component {
             </button>
             <div id="myDropdown" className="collection-dropdown">
               { collectionsList }
+              <input type="text" placeholder="e.g. Hockey" value={ this.state.newCollection }
+                className="new-collection-input" onChange={ this.update }></input>
               <p className="new-collection" onClick={ this.createNewCollection }>
                 <i className='fa fa-plus' aria-hidden="true"></i>
                 CREATE A COLLECTION
               </p>
-            </div>
-            <div id="newCollectdown" className="new-collection-dropdown">
-              <input type="text" placeholder="e.g. Hockey" value={ this.state.newCollection }></input>
-              <button>
-
-              </button>
-              <button>
-                
-              </button>
             </div>
           </div>
         </header>
