@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchFeed: feed => dispatch(fetchFeed(feed)),
   fetchNewFeed: feed => dispatch(fetchNewFeed(feed)),
   subscribe:(subscription) => dispatch(subscribe(subscription)),
   unsubscribe: (subscription) => dispatch(unsubscribe(subscription)),

@@ -6,6 +6,7 @@ import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import FeedFormContainer from './feed/feed_form_container';
 import FeedDetailContainer from './feed/feed_detail_container';
+import CollectionItemContainer from './collection/collection_item_container';
 
 const Root = ({ store }) => {
 
@@ -31,6 +32,7 @@ const Root = ({ store }) => {
         <Route path="home" component={ HomeContainer } onEnter={ _ensureLoggedIn } />
         <Route path="newfeed" component={ FeedFormContainer } onEnter={ _ensureLoggedIn} />
         <Route path="feed/:feedId" component={ FeedDetailContainer } />
+        <Route path="collection/:collectionTitle" component={ CollectionItemContainer } />
       </Route>
     </Router>
   </Provider>

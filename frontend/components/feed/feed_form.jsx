@@ -22,18 +22,21 @@ class FeedForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let feed;
     $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.state.url}`})
       .then((res) => {
         let result = res.feed;
-        this.props.fetchNewFeed({title: result.title, description: result.description, image: result.image, url: result.url  });
-        this.setState({title: result.title, description: result.description, image: result.image });
+        let description;
+        if (!result.description) {
+          description = "Sports News";
+        } else { description = result.description; }
+        this.props.fetchNewFeed({title: result.title, description: description, image: result.image, url: result.url  });
+        this.setState({title: result.title, description: description, image: result.image });
 
         this.props.feeds.forEach(feed => {
           if (feed.title === result.title) {
             this.setState({feedId: feed.id});
           }
-        })
+        });
       });
   }
 
@@ -44,7 +47,13 @@ class FeedForm extends React.Component {
 
   createNewCollection(e) {
     e.preventDefault();
-    this.props.fetchNewCollection({ title: this.state.newCollection, feed_id: this.props.feed.id });
+    let feedId;
+    if (!this.state.feedId) {
+      feedId =  this.props.feeds.slice(-1)[0].id;
+    } else {
+      feedId = this.state.feedId;
+    }
+    this.props.fetchNewCollection({ title: this.state.newCollection, feed_id: feedId });
     this.setState({ newCollection: ""} );
   }
 

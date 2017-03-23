@@ -7,10 +7,17 @@ class CollectionIndexItem extends React.Component {
     this.toggleCollection = this.toggleCollection.bind(this);
   }
 
-  redirect(id) {
+  redirectFeed(id) {
     return event => {
       event.preventDefault();
       hashHistory.push(`/feed/${id}`);
+    };
+  }
+
+  redirectCollection(title) {
+    return event => {
+      event.preventDefault();
+      hashHistory.push(`/collection/${title}`);
     };
   }
 
@@ -35,7 +42,7 @@ class CollectionIndexItem extends React.Component {
     if (feeds) {
       collection_feed = this.props.collection.feeds.map(id => {
         return (
-          <li key={ id } className="subscription-feed-container" onClick={ this.redirect(id) }>
+          <li key={ id } className="subscription-feed-container" onClick={ this.redirectFeed(id) }>
             <img src={ feeds[id].image } className="subscription-feed-img"></img>
             <h2 className="subscription-feed">{ feeds[id].title }</h2>
           </li>
@@ -47,7 +54,7 @@ class CollectionIndexItem extends React.Component {
       <div className={`${this.props.collection.title}-container`}>
         <li className="collection-display" key={this.props.collection.id}>
           <i className="fa fa-angle-right" onClick={ this.toggleCollection }aria-hidden="true"></i>
-          <p>{ this.props.collection.title }</p>
+          <p onClick={ this.redirectCollection(this.props.collection.title) }>{ this.props.collection.title }</p>
         </li>
           <ul className="collect-feed-container">
             { collection_feed }
