@@ -63,7 +63,7 @@ class CollectionItem extends React.Component {
       });
 
       parsedArticles = articles.slice(0, 25).map(article => {
-        return (
+        return ( 
           <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } />
         );
       });

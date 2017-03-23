@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320215141) do
+ActiveRecord::Schema.define(version: 20170323224151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20170320215141) do
     t.index ["description"], name: "index_feeds_on_description", using: :btree
   end
 
+  create_table "sports", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_sports_on_title", using: :btree
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.integer  "feed_id",       null: false
     t.integer  "collection_id", null: false
@@ -40,6 +47,15 @@ ActiveRecord::Schema.define(version: 20170320215141) do
     t.datetime "updated_at",    null: false
     t.index ["collection_id"], name: "index_subscriptions_on_collection_id", using: :btree
     t.index ["feed_id"], name: "index_subscriptions_on_feed_id", using: :btree
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "feed_id",    null: false
+    t.integer  "sport_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feed_id"], name: "index_taggings_on_feed_id", using: :btree
+    t.index ["sport_id"], name: "index_taggings_on_sport_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
