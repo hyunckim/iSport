@@ -7,7 +7,7 @@ class Api::SubscriptionsController < ApplicationController
       render 'api/collections/show'
 
     else
-      render json: ['Was unable to subscribe.'], status: 401
+      render json: @subscription.errors.full_messages, status: 401
     end
   end
 

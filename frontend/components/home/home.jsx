@@ -9,6 +9,11 @@ class Home extends React.Component {
     this.collectArticles = this.collectArticles.bind(this);
   }
 
+  componentDidMount() {
+    this.collectArticles();
+    console.log("there");
+  }
+
   collectArticles() {
     let { collections } = this.props;
     let subscribedFeeds = [];
@@ -28,8 +33,12 @@ class Home extends React.Component {
             }
           }).then(res => {
             allArticleItems = allArticleItems.concat(res.items);
-            this.setState({ articles: allArticleItems });
+            console.log("here");
+            this.setState({ articles: allArticleItems }, () => {
+              console.log(this.state);
+            });
           });
+
         });
       }
     }
@@ -39,7 +48,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
-
       </div>
     );
   }
