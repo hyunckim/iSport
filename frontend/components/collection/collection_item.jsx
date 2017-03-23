@@ -1,5 +1,6 @@
 import React from 'react';
 import ModalArticle from '../article/modal_article';
+import { merge } from 'lodash';
 
 class CollectionItem extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class CollectionItem extends React.Component {
             api_key: 'n8nh7hfhczjqecbwvjhvvafcfomhdiu9ngcduib4'
           }
         }).then(res => {
-          allArticle = allArticle.concat(res);
+          allArticle = allArticle.concat(merge(res, { feed: { id: feedId }}));
           this.setState({ feeds: allArticle });
         });
       });
@@ -63,7 +64,7 @@ class CollectionItem extends React.Component {
 
       parsedArticles = articles.slice(0, 25).map(article => {
         return (
-          <ModalArticle article={ article[0] } feed={ article[1] } />
+          <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } />
         );
       });
     }
