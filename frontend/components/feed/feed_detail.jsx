@@ -4,7 +4,7 @@ import ModalArticle from '../article/modal_article';
 class FeedDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {response: {}, follow: "FOLLOW"};
+    this.state = {response: {}, follow: "FOLLOW", newCollection: ""};
     this.collectionDropdown = this.collectionDropdown.bind(this);
     this.changeFollowText = this.changeFollowText.bind(this);
     this.removeToggle = this.removeToggle.bind(this);
@@ -44,6 +44,11 @@ class FeedDetail extends React.Component {
   collectionDropdown(e) {
     e.preventDefault();
     document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  createNewCollection(e) {
+    e.preventDefault();
+
   }
 
   subscribe(collectionId) {
@@ -156,6 +161,19 @@ class FeedDetail extends React.Component {
             </button>
             <div id="myDropdown" className="collection-dropdown">
               { collectionsList }
+              <p className="new-collection" onClick={ this.createNewCollection }>
+                <i className='fa fa-plus' aria-hidden="true"></i>
+                CREATE A COLLECTION
+              </p>
+            </div>
+            <div id="newCollectdown" className="new-collection-dropdown">
+              <input type="text" placeholder="e.g. Hockey" value={ this.state.newCollection }></input>
+              <button>
+
+              </button>
+              <button>
+                
+              </button>
             </div>
           </div>
         </header>
