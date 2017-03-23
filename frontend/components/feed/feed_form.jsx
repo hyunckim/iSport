@@ -5,8 +5,12 @@ class FeedForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { title: "", description: "", url: "", image: "",
-      follow: "FOLLOW", newCollection: "", feedId: ""};
+      follow: "FOLLOW", newCollection: "", feedId: 0};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.moveOver = this.moveOver.bind(this);
+    this.moveOut = this.moveOut.bind(this);
+    this.createNewCollection = this.createNewCollection.bind(this);
+    this.collectionDropdown = this.collectionDropdown.bind(this);
   }
 
   update(attr) {
@@ -30,7 +34,6 @@ class FeedForm extends React.Component {
             this.setState({feedId: feed.id});
           }
         })
-
       });
   }
 
@@ -67,20 +70,28 @@ class FeedForm extends React.Component {
 
   subscribe(collectionId) {
     return e => {
+      let feedId;
+      if (!this.state.feedId) {
+        feedId =  this.props.feeds.slice(-1)[0].id;
+      } else {
+        feedId = this.state.feedId;
+      }
       e.preventDefault();
       if (e.target.children[0].classList.contains("fa-times")) {
         this.props.unsubscribe({
           collection_id: collectionId,
-          feed_id: this.state.feedId
+          feed_id: feedId
         });
+        e.currentTarget.children[0].classList.remove("fa-times");
         if (!document.getElementsByClassName("fa-check").length) {
           this.setState({ follow: "FOLLOW" });
         }
       } else {
           this.props.subscribe({
             collection_id: collectionId,
-            feed_id: this.state.feedId
+            feed_id: feedId
           });
+          e.currentTarget.children[0].classList.add("fa-check");
           if (this.state.follow === "FOLLOW") {
             this.setState({ follow: "FOLLOWING"});
           }
@@ -97,6 +108,7 @@ class FeedForm extends React.Component {
     let collectionsList;
     if (this.props.collections.length) {
       collectionsList = this.props.collections.map(collection => {
+
         return (
           <p className="subscription-name" onClick= { this.subscribe(collection.id) }  onMouseOver={ this.moveOver } onMouseOut={ this.moveOut }>
             { collection.title }
