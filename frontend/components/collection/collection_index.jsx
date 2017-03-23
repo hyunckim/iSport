@@ -5,11 +5,17 @@ import CollectionIndexItem from './collection_index_item';
 class CollectionIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.directHome = this.directHome.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchCollections();
     this.props.fetchFeeds();
+  }
+
+  directHome(e) {
+    e.preventDefault();
+    hashHistory.push("/");
   }
 
   render() {
@@ -23,7 +29,7 @@ class CollectionIndex extends React.Component {
     return (
       <div className="collection-container">
         <ul>
-          <li className="collection-display" key={ 100 }>
+          <li className="collection-display" key={ 100 } onClick={ this.directHome }>
             <i className="fa fa-bars"></i>
               <p>All</p>
           </li>

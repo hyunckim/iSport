@@ -6,7 +6,6 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :collections, dependent: :destroy
-
   has_many :feeds, through: :collections
 
   attr_reader :password

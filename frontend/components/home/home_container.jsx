@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from './home';
-import { logout } from '../../actions/session_actions';
+import { fetchCollections } from '../../actions/collection_actions';
 
 const mapStateToProps = state => ({
   collections: Object.keys(state.collections).map(id => state.collections[id]),
@@ -8,6 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchCollections:() => dispatch(fetchCollections())
 });
 
 export default connect(
