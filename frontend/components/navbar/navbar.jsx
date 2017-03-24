@@ -37,10 +37,6 @@ class Navbar extends React.Component {
            <span className="nav-logo1">i</span><span className="nav-logo2">S</span><span className="nav-logo3">PORT</span>
          </div>
          { this.logoutButton() }
-         <div className="search-bar">
-           <i className="fa fa-search" aria-hidden="true"></i>
-           <input className="search-input" placeholder="Search"></input>
-          </div>
         </div>
      </div>
    );

@@ -11,12 +11,16 @@
 
 .feed-index-container {
   margin-top: 150px;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .feed-index {
   display: flex;
   flex-direction: row;
   margin-top: 200px;
+  flex-wrap: wrap;
 }
 
 // .feed-item {
@@ -42,12 +46,12 @@
 }
 
 .feed-logo {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   opacity: 0.5;
   border-radius: 3px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 40px;
+  margin-bottom: 40px;
   color: $gray;
 }
 

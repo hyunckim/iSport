@@ -21,9 +21,4 @@ Users can store their favorite feeds to their collection, and view all the artic
 
 ### Sports
 
-This is a sport themed Feed Aggregator, which has a variety of different sport related categories. The categories store Feeds related to them, in order to help users easily find new feeds that may interest them.
-
-
-## Future Directions for the Project
-
-### Saving Articles
+This sports themed Feed Aggregator accumulates different sports feeds in order to present a variety of sport categories. New users can easily navigate through the page and choose the sport that most appeals to them.
