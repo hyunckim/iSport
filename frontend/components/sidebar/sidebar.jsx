@@ -19,6 +19,11 @@ class Sidebar extends React.Component {
     hashHistory.push(`newfeed`);
   }
 
+  redirectSports(e) {
+    e.preventDefault();
+    hashHistory.push('/sports');
+  }
+
   pinSidebar(e) {
     e.preventDefault();
     this.setState({ pin: (this.state.pin === "pin" ? "unpin" : "pin" ) });
@@ -28,6 +33,7 @@ class Sidebar extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="sidebar-container">
+          <button className="discover-button" onClick={ this.redirectSports }>Discover and Follow</button>
           <div className= "all-gear-container">
             <p className="collection-header">FEEDS</p>
             <i className="fa fa-cog" aria-hidden="true"></i>

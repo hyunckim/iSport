@@ -12,20 +12,20 @@ class CollectionItem extends React.Component {
   componentDidMount() {
     this.props.fetchCollections();
     if (this.props.collection) {
-      this.collectArticles();
+      this.collectArticles(this.props);
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (!this.props.collection && nextProps.collection) {
-      this.collectArticles();
+      this.collectArticles(nextProps);
     } else if ( this.props.collection !== nextProps.collection) {
-      this.collectArticles();
+      this.collectArticles(nextProps);
     }
   }
 
-  collectArticles() {
-    let { collection } = this.props;
+  collectArticles(props) {
+    let { collection } = props;
     let allArticle = [];
     if (collection) {
       collection.feeds.forEach(feedId => {
@@ -63,7 +63,7 @@ class CollectionItem extends React.Component {
       });
 
       parsedArticles = articles.slice(0, 25).map(article => {
-        return ( 
+        return (
           <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } />
         );
       });

@@ -6,7 +6,6 @@
   z-index: 2;
   padding-left: 15px;
   padding-right: 15px;
-  color: black;
 }
 
 .sidebar-nav {
@@ -34,4 +33,14 @@
 
 .fa-plus {
   margin-right: 5px;
+}
+
+.discover-button {
+  margin-top: 35px;
+  margin-left: 20px;
+  margin-right: auto;
+  color: $custom-blue;
+  padding: 14px;
+  border: 1px solid $custom-blue;
+  border-radius: 3px;
 }

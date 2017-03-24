@@ -7,6 +7,8 @@ import HomeContainer from './home/home_container';
 import FeedFormContainer from './feed/feed_form_container';
 import FeedDetailContainer from './feed/feed_detail_container';
 import CollectionItemContainer from './collection/collection_item_container';
+import SportIndexContainer from './sport/sport_index_container';
+import FeedIndexContainer from './feed/feed_index_container';
 
 const Root = ({ store }) => {
 
@@ -33,6 +35,8 @@ const Root = ({ store }) => {
         <Route path="newfeed" component={ FeedFormContainer } onEnter={ _ensureLoggedIn} />
         <Route path="feed/:feedId" component={ FeedDetailContainer } />
         <Route path="collection/:collectionTitle" component={ CollectionItemContainer } />
+        <Route path="sports" component={ SportIndexContainer } />
+        <Route path="/sports/:sportId" component={ FeedIndexContainer } />
       </Route>
     </Router>
   </Provider>

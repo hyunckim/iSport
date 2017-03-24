@@ -32,9 +32,6 @@ sports_world_news = Feed.create(url: "https://rss2json.com/#rss_url=http%3A%2F%2
   image: "https://pbs.twimg.com/profile_images/466596743170121729/1yY1CeHZ_400x400.png")
 
 
-
-
-
 collection1 = Collection.create(title:"Basketball", user_id: 1)
 collection2 = Collection.create(title:"Football", user_id: 1)
 collection3 = Collection.create(title:"Tennis", user_id: 1)
@@ -43,3 +40,10 @@ collection5 = Collection.create(title:"Boxing", user_id: 1)
 
 subscription1 = Subscription.create(feed_id: 1, collection_id: 1)
 subscription2 = Subscription.create(feed_id: 2, collection_id: 1)
+
+sport1 = Sport.create(title: "General")
+sport2 = Sport.create(title: "Basketball")
+sport3 = Sport.create(title: "Football")
+sport4 = Sport.create(title: "Soccer")
+sport5 = Sport.create(title: "Tennis")
+sport6 = Sport.create(title: "Baseball")

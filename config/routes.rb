@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :feeds, only: [:show, :index, :create]
     resources :collections, except: [:new, :edit]
     resources :subscriptions, only: [:create, :destroy]
+    resources :sports, only: [:index, :show]
   end
 end
