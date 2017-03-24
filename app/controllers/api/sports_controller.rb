@@ -6,7 +6,6 @@ class Api::SportsController < ApplicationController
 
   def show
     @sport = Sport.find(params[:id])
-    @feeds = @sport.feeds
-    render 'api/feeds/index'
+    render :show
   end
 end

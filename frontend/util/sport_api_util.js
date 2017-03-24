@@ -4,3 +4,10 @@ export const fetchSports = () => (
     url: "/api/sports",
   })
 );
+
+export const fetchSport = (id) => (
+  $.ajax({
+    method: "GET",
+    url: `/api/sports/${id}`
+  })
+);

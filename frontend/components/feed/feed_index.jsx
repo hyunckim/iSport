@@ -8,7 +8,7 @@ class FeedIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchFeeds();
+    this.props.fetchSports();
   }
 
   directToDetail(feed) {
@@ -20,13 +20,16 @@ class FeedIndex extends React.Component {
 
   render() {
     let subscribe = this.props.subscribe;
-    let allFeeds = this.props.feeds.map(feed => {
-      return (
-        <li className="feed-index-item" key={feed.id}>
-          <FeedIndexItem feed={ feed } subscribe={ subscribe }/>
-        </li>
-      );
-    });
+    let allFeeds = "WHY YOU SUCK SO MUCH!";
+    if (this.props.feeds) {
+      allFeeds = this.props.feeds.map(feed => {
+        return (
+          <li className="feed-index-item" key={feed.id}>
+            <FeedIndexItem feed={ feed } subscribe={ subscribe }/>
+          </li>
+        );
+      });
+    }
     return (
       <div className="feed-container">
         { allFeeds }

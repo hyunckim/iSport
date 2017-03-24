@@ -31,7 +31,7 @@ const receiveFeed = feed => ({
   feed
 });
 
-const receiveFeeds = (feeds) => ({
+export const receiveFeeds = (feeds) => ({
   type: RECEIVE_FEEDS,
   feeds
 });
