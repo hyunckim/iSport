@@ -28,7 +28,6 @@ class FeedIndexItem extends React.Component {
         <img src={ feed.image } className="feed-logo" onClick= { this.directToDetail(feed.id) }></img>
         <p className="feed-title" onClick= { this.directToDetail(feed.id) }>{ feed.title }</p>
         <p className="feed-description">{ feed.description }</p>
-        <p className="feed-subscribe" onClick= { this.follow(feed.id) }>FOLLOW</p>
       </div>
     );
   }

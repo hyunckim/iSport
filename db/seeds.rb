@@ -47,3 +47,7 @@ sport3 = Sport.create(title: "Football")
 sport4 = Sport.create(title: "Soccer")
 sport5 = Sport.create(title: "Tennis")
 sport6 = Sport.create(title: "Baseball")
+
+http://snowboarding.transworld.net/feed/
+http://www.grindtv.com/feed/
+http://www.snowboarder.com/feed/

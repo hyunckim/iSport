@@ -24,9 +24,7 @@ class FeedIndex extends React.Component {
     if (this.props.feeds) {
       allFeeds = this.props.feeds.map(feed => {
         return (
-          <li className="feed-index-item" key={feed.id}>
             <FeedIndexItem feed={ feed } subscribe={ subscribe }/>
-          </li>
         );
       });
     }

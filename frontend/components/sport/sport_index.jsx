@@ -17,13 +17,13 @@ class SportIndex extends React.Component {
   }
 
   render() {
-    let sports = "THIS SHOULD NOT SHOW UP!! YOU SUCK";
+    let sports = "";
     if (this.props.sports) {
       sports = this.props.sports.map(sport => {
         return (
           <div className="sport-item" onClick={ this.directToSport(sport.id) }>
             <p className="sport-title">{ sport.title }</p>
-            <img src="http://www.prepcasts.com/wp-content/uploads/2014/04/BasketballStockImage.jpg" className="sport-image" ></img>
+            <img src={ sport.image } className="sport-image" ></img>
           </div>
         );
       });
