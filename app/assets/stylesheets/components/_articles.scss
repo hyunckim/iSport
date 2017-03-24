@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
 }
 
 .feed-detail-container {
@@ -23,7 +24,12 @@
 }
 
 .feed-detail-title {
-  font-size: 36px;
+  margin-left: -15%;
+  font-size: 40px;
+  color: $custom-blue;
+  font: bold 52px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px 5px $light-blue,
+             2px 2px 5px $light-blue;
 }
 
 .pLatest {
@@ -187,7 +193,16 @@
   width: auto;
   height: 18px;
   float: left;
+  border-radius: 3px;
+  margin-right: 2px;
 }
+
+.article-date-no-feed-container {
+  color: $gray;
+  padding-top: 10px;
+  opacity: .8;
+}
+
 
 .ReactModal__Content--after-open .article-modal {
   display: none
@@ -200,7 +215,6 @@
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
-  overflow: auto;
   padding: 45px;
 }
 
@@ -217,6 +231,12 @@
 .article-modal-detail {
   font-family: sans-serif;
   line-height: 1.5;
+}
+
+.article-modal-image {
+  height: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
 }
 
 .article-modal-header {
@@ -243,11 +263,6 @@
   float: left;
   color: $gray;
   font-size: 12px;
-}
-
-.article-modal-image {
-  height: auto;
-  padding-bottom: 30px;
 }
 
 .article-modal-content {

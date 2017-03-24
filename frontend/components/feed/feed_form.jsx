@@ -117,11 +117,15 @@ class FeedForm extends React.Component {
     let collectionsList;
     if (this.props.collections.length) {
       collectionsList = this.props.collections.map(collection => {
+        let cName = "";
+        if ( collection.feeds.includes(this.props.feed.id)) {
+          cName = "fa-check";
+        }
 
         return (
           <p className="subscription-name" onClick= { this.subscribe(collection.id) }  onMouseOver={ this.moveOver } onMouseOut={ this.moveOut }>
             { collection.title }
-            <i className={`fa follow-icon`} aria-hidden="true"></i>
+            <i className={`fa ${cName} follow-icon`} aria-hidden="true"></i>
           </p>
         );
       });

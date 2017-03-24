@@ -6,11 +6,14 @@ import FeedIndex from './feed_index';
 
 const mapStateToProps = (state, { params }) => {
   let feeds = "";
+  let sportTitle = "";
   if (state.sports[params.sportId]) {
     feeds = state.sports[params.sportId].feeds;
+    sportTitle = state.sports[params.sportId].title;
   }
   return ({
-    feeds: feeds
+    feeds: feeds,
+    sportTitle: sportTitle
   });
 };
 

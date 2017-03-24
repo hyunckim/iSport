@@ -10,16 +10,16 @@ const customStyles = {
     bottom          : 0,
     backgroundColor : 'rgba(255, 255, 255, 0.75)',
     zIndex          : 10,
-    boxShadow       : 'rgba(0, 0, 0, 0.498039) 8px 10px 34px'
+    boxShadow       : 'rgba(0, 0, 0, 0.498039) 8px 10px 34px 10px'
   },
   content : {
     position: "fixed",
-    top: 'auto',
+    top: '50%',
     right: '0',
     bottom: 'auto',
-    width: '50vw',
-    borderLeft: "1px solid gray",
+    width: '60vw',
     padding: "6rem",
+    transform: 'translate(-0%, -50%)'
   }
 };
 
@@ -58,17 +58,31 @@ class ModalArticle extends React.Component {
       if ( article.author ) {
         author = `by ${ article.author }`;
       }
+
+      let image = "image";
+      let feed = "feed";
+      let feedImg = "feed-img";
+      let date = "date";
+      let feedContainer = 'feed-container';
+      if ( !article.enclosure.link ) {
+        image = "no-image";
+        feedImg = "no-feed-img";
+        feed = "no-feed";
+        date = "no-date";
+        feedContainer = "no-feed-container";
+      }
+
       return (
         <div>
           <li className="article-box" key={article.title} onClick={this.openModal}>
-            <img className="article-image" src={article.enclosure.link}></img>
+            <img className={`article-${image}`} src={ article.enclosure.link }></img>
             <div className="article-content-container">
-              <p className="article-title" >{ article.title }</p>
-              <p className="article-description" >{ article.description }</p>
-              <div className="article-date-feed-container">
-                <img src={ this.props.feed.image } className="article-feed-img"></img>
-                <p className="article-feed" >{ this.props.feed.title }</p>
-                <p className="article-date" >{ article.pubDate }</p>
+              <p className={`article-title`} >{ article.title }</p>
+              <p className={`article-description`} >{ article.description }</p>
+              <div className={`article-date-${feedContainer}`}>
+                <img src={ this.props.feed.image } className={`article-feed-img`}></img>
+                <p className={`article-feed`} >{ this.props.feed.title }</p>
+                <p className={`article-date`} >{ article.pubDate }</p>
               </div>
             </div>
           </li>

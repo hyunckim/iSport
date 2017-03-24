@@ -17,9 +17,8 @@ class SportIndex extends React.Component {
   }
 
   render() {
-    let sports = "";
-    if (this.props.sports) {
-      sports = this.props.sports.map(sport => {
+      console.log(this.props.sports);
+      let sports = this.props.sports.map(sport => {
         return (
           <div className="sport-item" onClick={ this.directToSport(sport.id) }>
             <p className="sport-title">{ sport.title }</p>
@@ -27,7 +26,7 @@ class SportIndex extends React.Component {
           </div>
         );
       });
-    }
+
     return (
       <div className="sport-container">
         { sports }

@@ -12,6 +12,7 @@ class Sidebar extends React.Component {
 
   componentDidMount() {
     this.props.fetchCollections();
+    this.props.fetchSports();
   }
 
   addContent(e) {

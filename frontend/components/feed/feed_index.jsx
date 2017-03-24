@@ -20,8 +20,10 @@ class FeedIndex extends React.Component {
 
   render() {
     let subscribe = this.props.subscribe;
-    let allFeeds = "WHY YOU SUCK SO MUCH!";
+    let allFeeds = "";
+    let sportTitle = "";
     if (this.props.feeds) {
+      sportTitle = this.props.sportTitle;
       allFeeds = this.props.feeds.map(feed => {
         return (
             <FeedIndexItem feed={ feed } subscribe={ subscribe }/>
@@ -29,8 +31,11 @@ class FeedIndex extends React.Component {
       });
     }
     return (
-      <div className="feed-container">
-        { allFeeds }
+      <div className="feed-index-container">
+        <h2 className="feed-detail-title">{ sportTitle }</h2>
+        <div className="feed-index">
+          { allFeeds }
+        </div>
       </div>
     );
   }
