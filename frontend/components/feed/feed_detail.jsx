@@ -18,7 +18,15 @@ class FeedDetail extends React.Component {
     this.props.fetchFeed();
 
     if (this.props.feed) {
-      $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.props.feed.url}`})
+      $.ajax({
+        url: 'https://api.rss2json.com/v1/api.json',
+        method: 'GET',
+        dataType: 'json',
+        data: {
+          rss_url: `${this.props.feed.url}`,
+          api_key: 'n8nh7hfhczjqecbwvjhvvafcfomhdiu9ngcduib4'
+        }
+      })
         .then((res) => this.setState({ response: res.items }));
       this.props.collections.forEach(collection => {
         if (collection.feeds.includes(this.props.feed.id)) {
@@ -30,10 +38,26 @@ class FeedDetail extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (!this.props.feed && nextProps.feed) {
-      $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${nextProps.feed.url}`})
+      $.ajax({
+        url: 'https://api.rss2json.com/v1/api.json',
+        method: 'GET',
+        dataType: 'json',
+        data: {
+          rss_url: `${nextProps.feed.url}`,
+          api_key: 'n8nh7hfhczjqecbwvjhvvafcfomhdiu9ngcduib4'
+        }
+      })
         .then((res) => this.setState({ response: res.items }));
     } else if ( this.props.feed.id != nextProps.feed.id) {
-      $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${nextProps.feed.url}`})
+      $.ajax({
+        url: 'https://api.rss2json.com/v1/api.json',
+        method: 'GET',
+        dataType: 'json',
+        data: {
+          rss_url: `${nextProps.feed.url}`,
+          api_key: 'n8nh7hfhczjqecbwvjhvvafcfomhdiu9ngcduib4'
+        }
+      })
         .then((res) => this.setState({ response: res.items }));
     }
     this.props.collections.forEach(collection => {

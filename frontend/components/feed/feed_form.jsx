@@ -22,7 +22,15 @@ class FeedForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    $.ajax({url: `https://api.rss2json.com/v1/api.json?rss_url=${this.state.url}`})
+    $.ajax({
+      url: 'https://api.rss2json.com/v1/api.json',
+      method: 'GET',
+      dataType: 'json',
+      data: {
+        rss_url: `${this.state.url}`,
+        api_key: 'n8nh7hfhczjqecbwvjhvvafcfomhdiu9ngcduib4'
+      }
+    })
       .then((res) => {
         let result = res.feed;
         let description;
@@ -118,7 +126,7 @@ class FeedForm extends React.Component {
     if (this.props.collections.length) {
       collectionsList = this.props.collections.map(collection => {
         let cName = "";
-        if ( collection.feeds.includes(this.props.feed.id)) {
+        if ( collection.feeds.includes(this.state.feedId)) {
           cName = "fa-check";
         }
 

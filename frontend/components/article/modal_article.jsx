@@ -75,7 +75,7 @@ class ModalArticle extends React.Component {
       return (
         <div>
           <li className="article-box" key={article.title} onClick={this.openModal}>
-            <img className={`article-${image}`} src={ article.enclosure.link }></img>
+            <img className={`article-${image}`} src={ article.enclosure.link || article.enclosure.thumbnail }></img>
             <div className="article-content-container">
               <p className={`article-title`} >{ article.title }</p>
               <p className={`article-description`} >{ article.description }</p>
@@ -100,7 +100,7 @@ class ModalArticle extends React.Component {
               <p className="article-modal-author">{ author }</p>
               <p className="article-modal-pubDate">published: { article.pubDate }</p>
             </div>
-            <img className="article-modal-image" src={ article.enclosure.link }></img>
+            <img className="article-modal-image" src={ article.enclosure.link || article.enclosure.thumbnail }></img>
             <p className="article-modal-content">{ article.content }</p>
             <a href={`${ article.link }`} className="link-button">Visit Website</a>
             </div>

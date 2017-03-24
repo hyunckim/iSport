@@ -17,7 +17,6 @@ class SportIndex extends React.Component {
   }
 
   render() {
-      console.log(this.props.sports);
       let sports = this.props.sports.map(sport => {
         return (
           <div className="sport-item" onClick={ this.directToSport(sport.id) }>
