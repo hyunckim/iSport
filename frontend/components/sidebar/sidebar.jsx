@@ -36,8 +36,7 @@ class Sidebar extends React.Component {
         <div className="sidebar-container">
           <button className="discover-button" onClick={ this.redirectSports }>Explore Feeds</button>
           <div className= "all-gear-container">
-            <p className="collection-header">FEEDS</p>
-            <i className="fa fa-cog" aria-hidden="true"></i>
+            <p className="collection-header">Your Collections</p>
           </div>
           <CollectionIndexContainer />
           <button className="add-button" onClick={ this.addContent }>
