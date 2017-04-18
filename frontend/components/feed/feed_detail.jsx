@@ -153,14 +153,16 @@ class FeedDetail extends React.Component {
     let feed="";
     let collectionsList = "";
     if (this.props.collections.length) {
-      collectionsList = this.props.collections.map(collection => {
+      collectionsList = this.props.collections.map((collection, idx) => {
         let cName = "";
         if ( collection.feeds.includes(this.props.feed.id)) {
           cName = "fa-check";
         }
 
         return (
-          <p onClick={ this.subscribe(collection.id) } onMouseOver={ this.moveOver } onMouseOut={ this.moveOut } className="subscription-name">
+          <p onClick={ this.subscribe(collection.id) }
+            onMouseOver={ this.moveOver } onMouseOut={ this.moveOut }
+            className="subscription-name" key={ idx }>
             { collection.title }
             <i className={`fa ${cName} follow-icon`} aria-hidden="true"></i>
           </p>
@@ -174,7 +176,7 @@ class FeedDetail extends React.Component {
         feed = this.props.feed;
         parsedArticles = articles.map((article, idx) => {
           return (
-              <ModalArticle article={ article } feed={ feed }/>
+              <ModalArticle article={ article } feed={ feed } key={idx}/>
             );
           }
         );
