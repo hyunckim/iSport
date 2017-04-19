@@ -62,9 +62,9 @@ class CollectionItem extends React.Component {
         return date1 > date2 ? -1 : date1 < date2 ? 1 : 0;
       });
 
-      parsedArticles = articles.slice(0, 25).map(article => {
+      parsedArticles = articles.slice(0, 25).map((article, idx) => {
         return (
-          <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } />
+          <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } key={ idx } />
         );
       });
     }

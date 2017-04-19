@@ -17,9 +17,9 @@ class SportIndex extends React.Component {
   }
 
   render() {
-      let sports = this.props.sports.map(sport => {
+      let sports = this.props.sports.map((sport, idx) => {
         return (
-          <div className="sport-item" onClick={ this.directToSport(sport.id) }>
+          <div className="sport-item" onClick={ this.directToSport(sport.id) } key={ idx } >
             <p className="sport-title">{ sport.title }</p>
             <img src={ sport.image } className="sport-image" ></img>
           </div>
