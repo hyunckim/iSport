@@ -1,24 +1,24 @@
-# README
+# iSport
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[iSport live][heroku]
 
-Things you may want to cover:
+[heroku]: https://feed-isport.herokuapp.com/
 
-* Ruby version
+iSport is a full-stack web application inspired by Feedly, a RSS Feed Aggregator.
+Users can organize and explore feeds related to sports. iSport was built
+using Ruby on Rails on the back-end, PostGREs as database, and React/Redux
+on the front-end.
 
-* System dependencies
+## Features & Implementation
 
-* Configuration
+### RSS Feeds
 
-* Database creation
+When a user clicks on a feed, an ajax request is called to an api-endpoint and returns parsed articles in json format. Users can then view each articles as a modal so that users can easily navigate through articles without losing their place. Users can save feeds to their collection. Users can also create their own RSS feeds with correct input of RSS url.
 
-* Database initialization
+### Collections
 
-* How to run the test suite
+Users can store their favorite feeds to their collection, and view all the articles in a collection in chronological order. Users can create a new collection.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Sports
 
-* Deployment instructions
-
-* ...
+This sports themed Feed Aggregator accumulates different sports feeds in order to present a variety of sport categories. New users can easily navigate through the page and choose the sport that most appeals to them.
