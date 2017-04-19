@@ -162,7 +162,6 @@ class FeedDetail extends React.Component {
       if (articles) {
         feed = this.props.feed;
         parsedArticles = articles.map((article, idx) => {
-
           if (article.description.match(/<(.*?)>/)) {
             article.description = article.description.replace(/<(?:.|\n)*?>/gm, '');
           }
