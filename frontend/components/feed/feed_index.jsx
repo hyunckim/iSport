@@ -24,15 +24,15 @@ class FeedIndex extends React.Component {
     let sportTitle = "";
     if (this.props.feeds) {
       sportTitle = this.props.sportTitle;
-      allFeeds = this.props.feeds.map(feed => {
+      allFeeds = this.props.feeds.map((feed, idx) => {
         return (
-            <FeedIndexItem feed={ feed } subscribe={ subscribe }/>
+            <FeedIndexItem feed={ feed } subscribe={ subscribe } key={ idx }/>
         );
       });
     }
     return (
       <div className="feed-index-container">
-        <h2 className="feed-detail-title">{ sportTitle }</h2>
+        <h2 className="sport-detail-title">{ sportTitle }</h2>
         <div className="feed-index">
           { allFeeds }
         </div>

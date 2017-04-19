@@ -7,6 +7,7 @@ import { merge } from 'lodash';
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.feeds = [];
     this.state = { feeds: []};
     this.collectArticles = this.collectArticles.bind(this);
   }
@@ -70,9 +71,9 @@ class Home extends React.Component {
       });
 
       parsedArticles = articles.slice(0, 25).map((article, idx) => {
-        if (article.description.match(/<(.*?)>/)) {
-          article.description = article.description.replace(/<(?:.|\n)*?>/gm, '');
-          article.content = article.content.replace(/<(?:.|\n)*?>/gm, '');
+        if (article[0].description.match(/<(.*?)>/)) {
+          article[0].description = article[0].description.replace(/<(?:.|\n)*?>/gm, '');
+          article[0].content = article[0].content.replace(/<(?:.|\n)*?>/gm, '');
         }
         return (
           <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } key={ idx } />

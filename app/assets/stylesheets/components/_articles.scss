@@ -7,20 +7,22 @@
 
 .feed-detail-container {
   display: flex;
-  padding: 80px 0px 80px 80px;
+  padding: 60px 0px 80px 100px;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .feed-detail-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 170px;
+  // height: 150px;
   max-width: 625px;
 }
 
 .feed-detail-header-divider {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .feed-detail-title {
@@ -31,10 +33,10 @@
 
 .pLatest {
   font-size: 12px;
-  margin-top: 48px;
+  padding-top: 24px;
+  padding-bottom: 54px;
   color: #757575;
-  position: absolute;
-  bottom: 24px;
+  bottom: 34px;
   font-weight: bold;
 }
 
@@ -136,14 +138,10 @@
 }
 
 .article-image {
-  height: auto;
-  width: auto;
+  height: 100px;
+  width: 100%;
   max-width: 100px;
   margin-right: 20px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
   box-sizing: border-box;
   border-radius: 5px;
 }
