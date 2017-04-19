@@ -7,7 +7,6 @@ class FeedDetail extends React.Component {
     this.state = {response: {}, follow: "FOLLOW", newCollection: ""};
     this.collectionDropdown = this.collectionDropdown.bind(this);
     this.changeFollowText = this.changeFollowText.bind(this);
-    this.removeToggle = this.removeToggle.bind(this);
     this.moveOver = this.moveOver.bind(this);
     this.moveOut = this.moveOut.bind(this);
     this.createNewCollection = this.createNewCollection.bind(this);
@@ -164,6 +163,7 @@ class FeedDetail extends React.Component {
         parsedArticles = articles.map((article, idx) => {
           if (article.description.match(/<(.*?)>/)) {
             article.description = article.description.replace(/<(?:.|\n)*?>/gm, '');
+            article.content = article.content.replace(/<(?:.|\n)*?>/gm, '');
           }
 
           return (

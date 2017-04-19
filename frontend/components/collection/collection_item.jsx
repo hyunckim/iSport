@@ -63,6 +63,10 @@ class CollectionItem extends React.Component {
       });
 
       parsedArticles = articles.slice(0, 25).map((article, idx) => {
+        if (article[0].description.match(/<(.*?)>/)) {
+          article[0].description = article[0].description.replace(/<(?:.|\n)*?>/gm, '');
+          article[0].content = article[0].content.replace(/<(?:.|\n)*?>/gm, '');
+        }
         return (
           <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } key={ idx } />
         );
