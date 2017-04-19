@@ -115,19 +115,6 @@ class FeedDetail extends React.Component {
     }
   }
 
-  removeToggle(e) {
-    // e.preventDefault();
-    // if (!e.target.matches('.Follow-state')) {
-    //   let dropdowns = document.getElementsByClassName("collection-dropdown");
-    //   for (let i = 0; i < dropdowns.length; i++) {
-    //     let openDropdown = dropdowns[i];
-    //     if (openDropdown.classList.contains('show')) {
-    //       openDropdown.classList.remove('show');
-    //     }
-    //   }
-    // }
-  }
-
   moveOver(e) {
     e.preventDefault();
     if (e.currentTarget.children[0].classList.contains("fa-check")) {
