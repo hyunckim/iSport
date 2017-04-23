@@ -23,16 +23,17 @@ class FeedIndex extends React.Component {
     let allFeeds = "";
     let sportTitle = "";
     if (this.props.feeds) {
-      sportTitle = this.props.sportTitle;
+      sportTitle = this.props.sport.title;
       allFeeds = this.props.feeds.map((feed, idx) => {
         return (
-            <FeedIndexItem feed={ feed } subscribe={ subscribe } key={ idx }/>
+          <FeedIndexItem feed={ feed } subscribe={ subscribe } key={ idx }/>
         );
       });
     }
     return (
       <div className="feed-index-container">
         <h2 className="sport-detail-title">{ sportTitle }</h2>
+        <img src={ this.props.sport.image } className="sport-cover" ></img>
         <div className="feed-index">
           { allFeeds }
         </div>

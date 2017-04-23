@@ -11,8 +11,10 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCollections();
-    this.props.fetchSports();
+    if (this.props.currentUser) {
+      this.props.fetchCollections();
+      this.props.fetchSports();
+    }
   }
 
   addContent(e) {

@@ -59,27 +59,14 @@ class ModalArticle extends React.Component {
         author = `by ${ article.author }`;
       }
 
-      let image = "image";
-      let feed = "feed";
-      let feedImg = "feed-img";
-      let date = "date";
-      let feedContainer = 'feed-container';
-      if ( !article.enclosure.link ) {
-        image = "no-image";
-        feedImg = "no-feed-img";
-        feed = "no-feed";
-        date = "no-date";
-        feedContainer = "no-feed-container";
-      }
-
       return (
         <div>
           <li className="article-box" key={article.title} onClick={this.openModal}>
-            <img className={`article-${image}`} src={ article.enclosure.link || article.enclosure.thumbnail }></img>
+            <img className={`article-image`} src={ article.enclosure.link || article.enclosure.thumbnail || this.props.feed.image }></img>
             <div className="article-content-container">
               <p className={`article-title`} >{ article.title }</p>
               <p className={`article-description`} >{ article.description }</p>
-              <div className={`article-date-${feedContainer}`}>
+              <div className={`article-date-feedContainer`}>
                 <img src={ this.props.feed.image } className={`article-feed-img`}></img>
                 <p className={`article-feed`} >{ this.props.feed.title }</p>
                 <p className={`article-date`} >{ article.pubDate }</p>

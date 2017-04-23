@@ -4,14 +4,6 @@ import { hashHistory } from 'react-router';
 class FeedIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
-  }
-
-  follow(feed_id) {
-    return e => {
-      e.preventDefault();
-      this.props.subscribe({collection_id: 1, feed_id: feed_id});
-    };
   }
 
   directToDetail(feedId) {

@@ -18,6 +18,8 @@ const customStyles = {
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
+    width                 : '400px',
+    height                : '65vh',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
   }
@@ -45,8 +47,6 @@ class ModalSession extends React.Component {
     }
 
     afterOpenModal() {
-      // references are now sync'd and can be accessed.
-      // this.refs.subtitle.style.color = '#f00';
     }
 
     closeModal() {
@@ -64,7 +64,7 @@ class ModalSession extends React.Component {
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
-            style={customStyles}
+            style={ customStyles }
             contentLabel="Example Modal"
           >
           <div className="session-logo">

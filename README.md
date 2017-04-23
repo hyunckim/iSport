@@ -13,7 +13,7 @@ on the front-end.
 
 ### RSS Feeds
 
-When a user clicks on a feed, an ajax request is called to an api-endpoint and returns parsed articles in json format. Users can then view each articles as a modal so that users can easily navigate through articles without losing their place. Users can save feeds to their collection. Users can also create their own RSS feeds with correct input of RSS url.
+When a user clicks on a feed, an ajax request is called to an external api-endpoint and returns parsed articles in json format. Users can then view each articles as a modal so that users can easily navigate through articles without losing their place. Users can save feeds to their collection. Users can also create their own RSS feeds with correct input of RSS url.
 
 ### Collections
 

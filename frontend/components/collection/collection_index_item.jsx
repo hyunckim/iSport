@@ -41,6 +41,7 @@ class CollectionIndexItem extends React.Component {
     let collection_feed;
     if (feeds) {
       collection_feed = this.props.collection.feeds.map(id => {
+        debugger;
         return (
           <li key={ id } className="subscription-feed-container" onClick={ this.redirectFeed(id) }>
             <img src={ feeds[id].image } className="subscription-feed-img"></img>
