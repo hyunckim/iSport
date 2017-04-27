@@ -33,7 +33,6 @@ class FeedIndex extends React.Component {
     return (
       <div className="feed-index-container">
         <h2 className="sport-detail-title">{ sportTitle }</h2>
-        <img src={ this.props.sport.image } className="sport-cover" ></img>
         <div className="feed-index">
           { allFeeds }
         </div>

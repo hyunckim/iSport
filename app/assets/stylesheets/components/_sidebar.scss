@@ -1,8 +1,8 @@
 .sidebar-container {
   position: fixed;
-  width: 215px;
+  width: calc(19vw - 50px);
   height: 100%;
-  background-color: #f2f2f2;
+  background-color: white;
   z-index: 2;
   padding-left: 25px;
   padding-right: 25px;
@@ -11,9 +11,6 @@
 .sidebar-nav {
   display: flex;
   flex-direction: row;
-}
-
-.main-app {
 }
 
 .add-button {
@@ -31,8 +28,9 @@
   padding-left: 0;
 }
 
-.fa-plus {
+.add {
   margin-right: 5px;
+  color: white;
 }
 
 .discover-button {
@@ -40,7 +38,7 @@
   margin-left: 12px;
   margin-right: auto;
   color: $custom-blue;
-  padding: 14px 40px;
+  padding: 14px 30px;
   border: 1px solid $custom-blue;
   border-radius: 3px;
 }

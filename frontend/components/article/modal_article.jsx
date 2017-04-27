@@ -58,7 +58,6 @@ class ModalArticle extends React.Component {
       if ( article.author ) {
         author = `by ${ article.author }`;
       }
-
       return (
         <div>
           <li className="article-box" key={article.title} onClick={this.openModal}>

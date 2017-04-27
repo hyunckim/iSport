@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import ModalSession from '../session_form/modal_session';
+
 
 class Navbar extends React.Component {
 
@@ -12,12 +14,24 @@ class Navbar extends React.Component {
  handleLogOut(e) {
    e.preventDefault();
    this.props.logout()
-    .then(() => this.props.router.replace('/'));
+    .then(() => {
+      $('.article-container').empty();
+      this.props.router.replace('/');
+    });
  }
 
  logoutButton() {
    if ( this.props.currentUser ) {
      return <button onClick={ this.handleLogOut }>Log Out</button>;
+   }
+ }
+
+ loginButton() {
+   if ( !this.props.currentUser ) {
+     return (<div>
+         <ModalSession formType={ "signup" } />
+         <ModalSession formType={ "login" } />
+     </div>);
    }
  }
 
@@ -31,11 +45,12 @@ class Navbar extends React.Component {
    const welcomeMessage = this.props.currentUser ? `Welcome ${this.props.currentUser.email}` : "";
 
    return (
-     <div className="navbar">
+     <div className="navbar2">
        <div className="center-container">
          <div className="nav-logo" onClick={ this.directHome }>
            <span className="nav-logo1">i</span><span className="nav-logo2">S</span><span className="nav-logo3">PORT</span>
          </div>
+         { this.loginButton() }
          { this.logoutButton() }
         </div>
      </div>

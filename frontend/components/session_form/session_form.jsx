@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     if (this.props.formType === 'login') {
-      this.setState({ submitContent: "Log In", message: "Sign In"});
+      this.setState({ submitContent: "Log In", message: "Welcome back!"});
     } else {
       this.setState({ submitContent: "Sign Up", message: "Create Account"});
     }
@@ -53,32 +53,32 @@ class SessionForm extends React.Component {
     e.preventDefault();
     let demoLogin = "demo@iSport.com".split('');
     let demoPassword = "password123".split('');
-    this.setState({email: "", password: "", submitContent: "Log In", message: "Sign In"});
-    let that = this;
+    this.setState({email: "", password: "", submitContent: "Log In", message: "Signing In"});
+    let i = 0;
     let interval = setInterval(() => {
+      i += 1;
       if (demoLogin.length) {
-        this.setState({ email: this.state.email + demoLogin.shift() });
+        if (i % 12 === 0) {
+          this.setState({ email: this.state.email + demoLogin.shift(), message: "Signing In" });
+        } else if (i % 3 === 0 ){
+          this.setState({ email: this.state.email + demoLogin.shift(), message: this.state.message + "." });
+        } else {
+          this.setState({ email: this.state.email + demoLogin.shift() });
+        }
       } else if (demoPassword.length) {
-        this.setState({ password: this.state.password+demoPassword.shift()});
+        if (i % 12 === 0) {
+          this.setState({ password: this.state.password+demoPassword.shift(), message: "Signing In"});
+        } else if (i % 3 === 0 ){
+          this.setState({ password: this.state.password+demoPassword.shift(), message: this.state.message + "."});
+        } else {
+          this.setState({ password: this.state.password+demoPassword.shift() });
+        }
       } else {
         clearInterval(interval);
         this.props.login(this.state)
         .then(() => this.props.router.replace('home'));
       }
     }, 80);
-  }
-
-  redirect() {
-    if (this.props.formType === 'login') {
-      return (
-        <div>
-          <p>Don't have an account? </p>
-          <link></link>
-        </div>
-      );
-    } else {
-
-    }
   }
 
   render() {

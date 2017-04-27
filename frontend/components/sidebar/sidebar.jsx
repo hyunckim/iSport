@@ -42,7 +42,7 @@ class Sidebar extends React.Component {
           </div>
           <CollectionIndexContainer />
           <button className="add-button" onClick={ this.addContent }>
-            <i className="fa fa-plus" aria-hidden="true"></i>
+            <i className="fa fa-plus add" aria-hidden="true"></i>
             <span className="add-content">ADD CONTENT</span>
           </button>
         </div>
