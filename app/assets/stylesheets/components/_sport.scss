@@ -3,13 +3,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
-  padding-top: 200px;
-  padding-left: 50px;
+  padding: 60px 0px 0px 330px;
+  height: 100%;
 }
 
 .sport-item {
-  width: 200px;
-  height: 133px;
+  width: 300px;
+  height: 200px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-right: 30px;
@@ -32,8 +32,8 @@
 }
 
 .sport-image {
-  width: 200px;
-  height: 133px;
+  width: 300px;
+  height: 200px;
 }
 
 .sport-cover {

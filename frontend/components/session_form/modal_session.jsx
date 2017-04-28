@@ -14,6 +14,7 @@ const customStyles = {
     boxShadow       : 'rgba(0, 0, 0, 0.498039) 8px 10px 34px'
   },
   content : {
+    position              : 'fixed',
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
@@ -55,7 +56,7 @@ class ModalSession extends React.Component {
 
     render() {
 
-      const buttonName = (this.props.formType === 'signup' ? "GET STARTED" : "EXISTING USER");
+      const buttonName = (this.props.formType === 'signup' ? "Sign Up" : "Log In");
       const className = (this.props.formType === 'signup' ? "signup-button" : "login-button");
       return (
         <div className="session-buttons">
@@ -66,6 +67,7 @@ class ModalSession extends React.Component {
             onRequestClose={this.closeModal}
             style={ customStyles }
             contentLabel="Example Modal"
+            className="session-modal"
           >
           <div className="session-logo">
             <span className="session-logo1">i</span><span className="session-logo2">S</span><span className="session-logo3">PORT</span>

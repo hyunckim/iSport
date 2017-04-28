@@ -79,8 +79,6 @@ class Home extends React.Component {
           <ModalArticle article={ article[0] } feed={ this.props.feeds[article[1].id] } key={ idx } />
         );
       });
-    } else {
-      parsedArticles = <div>New to iSport? Explore your favorite feeds by clicking on "Explore Feeds".</div>;
     }
 
     return (

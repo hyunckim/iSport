@@ -52,29 +52,15 @@
 }
 
 .signup-button {
-  padding: 13px 50px;
   margin-right: 10px;
-  border-radius: 10px;
-  background-color: #183490;
+  background-color: transparent;
   cursor: pointer;
-  box-shadow: 0 1px #999;
+  color: black;
 }
 
 .login-button {
-  padding: 13px 30px;
-  border: 1px solid #e2e2e2;
-  color: #183490;
-  border-radius: 10px;
+  color: black;
   cursor: pointer;
-  box-shadow: 0 1px #999;
-}
-
-.signup-button:hover {
-  background-color: #2248C3;
-}
-
-.login-button:hover {
-  background-color: #E3E7F3;
 }
 
 .signup-button:active {
