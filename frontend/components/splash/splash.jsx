@@ -25,7 +25,7 @@ class Splash extends React.Component {
            <div className="row">
                <div className="col-sm-8">
                    <h2 className="title">What is  <span className="nav-logo1 title">i</span><span className="nav-logo2 title">S</span><span className="nav-logo3 title">PORT</span></h2>
-                   <p>iSport is a full-stack web application inspired by Feedly, a RSS feed aggregator. users can organize and explore feeds related to sports. This application was built using Ruby on Rails on the back-end, PostgreSQL as database, and React/Redux on the front-end.</p>
+                   <p>iSport is a full-stack web application inspired by Feedly, a RSS feed aggregator. Users can organize and explore feeds related to sports. This application was built using Ruby on Rails on the back-end, PostgreSQL as database, and React/Redux on the front-end.</p>
                </div>
            </div>
 

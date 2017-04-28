@@ -31,7 +31,7 @@ class Home extends React.Component {
     let { collections } = this.props;
     let subscribedFeeds = [];
     let allArticle = [];
-    if (collections.length) {
+    if (collections.length && this.props.feeds) {
       for (let i = 0; i < collections.length; i++) {
         collections[i].feeds.forEach((feedId, idx) => {
           if (!subscribedFeeds.includes(feedId)) {
