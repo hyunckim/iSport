@@ -24,29 +24,29 @@ class Splash extends React.Component {
 
            <div className="row">
                <div className="col-sm-8">
-                   <h2>What is iSport?</h2>
-                   <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
+                   <h2 className="title">What is  <span className="nav-logo1 title">i</span><span className="nav-logo2 title">S</span><span className="nav-logo3 title">PORT</span></h2>
+                   <p>iSport is a full-stack web application inspired by Feedly, a RSS feed aggregator. users can organize and explore feeds related to sports. This application was built using Ruby on Rails on the back-end, PostgreSQL as database, and React/Redux on the front-end.</p>
                </div>
            </div>
 
            <hr />
+           <h2 className="title">Features</h2>
 
            <div className="row">
                <div className="col-sm-4">
-                   <img className="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="" />
-                   <h2>RSS feeds</h2>
-                   <p>RSS feeds</p>
+                   <img className="img-circle img-responsive img-center" src="http://res.cloudinary.com/dh7hv7kkd/image/upload/v1493361799/Screen_Shot_2017-04-27_at_11.42.54_PM_tijejd.png" alt="" />
+                   <h2 className="title">RSS feeds</h2>
+                   <p>Enjoy all your favorite feeds in one website!</p>
                </div>
                <div className="col-sm-4">
-                   <img className="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="" />
-                   <h2>Collections</h2>
-                   <p>Collections</p>
+                   <img className="img-circle img-responsive img-center" src="http://res.cloudinary.com/dh7hv7kkd/image/upload/v1493360076/Screen_Shot_2017-04-27_at_11.14.07_PM_sbjllm.png" alt="" />
+                   <h2 className="title">Collections</h2>
+                   <p>Add your feeds to your collection!</p>
                </div>
                <div className="col-sm-4">
-                   <img className="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="" />
-                   <h2>Sports</h2>
-                   <p>Sports</p>
+                   <img className="img-circle img-responsive img-center" src="http://res.cloudinary.com/dh7hv7kkd/image/upload/v1493360175/Screen_Shot_2017-04-27_at_11.12.49_PM_rrgqdy.png" alt="" />
+                   <h2 className="title">Sports</h2>
+                   <p>Explore feeds based on sports!</p>
                </div>
            </div>
            <hr />

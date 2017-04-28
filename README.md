@@ -4,7 +4,7 @@
 
 [heroku]: https://feed-isport.herokuapp.com/
 
-iSport is a full-stack web application inspired by Feedly, a RSS Feed Aggregator. Users can organize and explore feeds related to sports. This application was built using Ruby on Rails on the back-end, PostGREs as database, and React/Redux on the front-end.
+iSport is a full-stack web application inspired by Feedly, a RSS Feed Aggregator. Users can organize and explore feeds related to sports. This application was built using Ruby on Rails on the back-end, PostgreSQL as database, and React/Redux on the front-end.
 
 ## Features & Implementation
 

@@ -1,11 +1,10 @@
 .sidebar-container {
   position: fixed;
-  width: calc(19vw - 50px);
   height: 100%;
   background-color: white;
   z-index: 2;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 .sidebar-nav {
