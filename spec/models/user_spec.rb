@@ -12,6 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    # association tests go here
+    it { should have_many(:collections) }
+    it { should have_many(:feeds) }
   end
 end
