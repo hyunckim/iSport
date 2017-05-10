@@ -43,12 +43,6 @@ RSpec.describe User, type: :model do
       end
     end
 
-    describe '#password=' do
-      it 'sets password digest' do
-
-      end
-    end
-
     describe '#is_password?' do
       it 'authenticates the password' do
         expect(user.is_password?('password')).to be_truthy
