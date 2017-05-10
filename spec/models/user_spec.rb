@@ -42,5 +42,17 @@ RSpec.describe User, type: :model do
         expect(new_session_token).not_to eq(old_session_token)
       end
     end
+
+    describe '#password=' do
+      it 'sets password digest' do
+
+      end
+    end
+
+    describe '#is_password?' do
+      it 'authenticates the password' do
+        expect(user.is_password?('password')).to be_truthy
+      end
+    end
   end
 end
