@@ -15,4 +15,22 @@ RSpec.describe User, type: :model do
     it { should have_many(:collections) }
     it { should have_many(:feeds) }
   end
+
+  describe 'model_methods' do
+    describe '.find_by_credentials' do
+      context 'when given correct credentials' do
+        it 'should find the right user' do
+          correct_user = User.find_by_credentials('breakfast', 'password')
+          expect(correct_user).to eq(user)
+        end
+      end
+
+      context 'when given incorrect credentials' do
+        it 'should return nil' do
+          incorrect_user = User.find_by_credentials('breakfast', 'pass')
+          expect(incorrect_user).not_to eq(user)
+        end
+      end
+    end
+  end
 end
